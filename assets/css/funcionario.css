@@ -1,0 +1,59 @@
+img{
+    width: 50px;
+    
+}
+
+.tabela{
+    margin-left: 4%;
+    margin-right: 4%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar{
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+.barra{
+    margin-bottom: 2%;
+    background: #007bff;
+    background: linear-gradient(to right, #5271ff, #0062E6, #33AEFF);
+  
+}
+
+@media (max-width: 800px){
+    .tabela-seguros{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .navbar{
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px){
+    .tabela-seguros{
+        margin-right: -30%;
+    }
+    .navbar{
+        width: 135%;
+    }
+}
+
+@media (max-width: 400px){
+    .tabela-seguros{
+        margin-right: -48%;
+    }
+    .navbar{
+        width: 155%;
+    }
+}
+
+@media (max-width: 350px){
+    .tabela-seguros{
+        margin-right: -67%;
+    }
+    .navbar{
+        width: 173%;
+    }
+}
