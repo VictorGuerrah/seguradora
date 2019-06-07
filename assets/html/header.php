@@ -13,27 +13,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link text-white" href="#">Cliente <span class="sr-only">(current)</span></a>
+                  <a class="nav-link text-white" href="../../views/cliente/cliente.php">Cliente <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Seguro</a>
+                  <a class="nav-link text-white" href="../../views/seguro/seguro.php">Seguro</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Tipo</a>
+                  <a class="nav-link text-white" href="../../views/tipo/tipo.php">Tipo</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="#">Vendas</a>
+                  <a class="nav-link text-white" href="../../views/vendas/vendas.php">Vendas</a>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Funcionario
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Cargo</a>
-                    <a class="dropdown-item"
-                      href="#">Departamento</a>
-                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="../../views/funcionario/funcionario.php">Funcionario</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="../../views/cargo/cargo.php">Cargos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="../../views/departamento/departamento.php">Departamento</a>
                 </li>
               </ul>
             </div>
