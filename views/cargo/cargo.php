@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css">
 </head>
 
-<?php require '../../controllers/cargo/cargo_controller.php'; ?>
+<?php require 'index_cargo.php'; ?>
 
 
 <body>
@@ -47,7 +47,7 @@
                     <?= $cargo->nome; ?> 
                     
                     </td>
-                    <td><?= $cargo->departamento_nome; ?> </td>
+                    <td><?= $cargo->departamento_id; ?> </td>
                     <td>
                         <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
                             data-target="#exibirCargo">Exibir</button>
@@ -80,6 +80,7 @@
                 </div>
                 <div class="modal-body">
 
+                 <?php /* require_once 'processos.php'; */ ?>
 
                     <form action="processos.php" method='POST'>
                         <div class="form-group">
@@ -176,7 +177,7 @@
         </div>
     </div>
 
-    <?php foreach($cargos as $cargo) { ?>
+
 
     <div class="modal fade" id="exibirCargo" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -189,10 +190,18 @@
                 </div>
                 <div class="modal-body">
 
-                    <p><b>Cargo:</b> <?= $cargo->nome ?></p>
+                    <p><b>Cargo:</b> Cargo #</p>
                     <hr>
-                    <p><b>Departamento:</b><?= $cargo->departamento_nome; ?> </p>
+                    <p><b>Salário:</b> ###</p>
                     <hr>
+                    <p><b>Quantidade:</b> #</p>
+                    <hr>
+                    <p><b>Descrição:</b> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aperiam
+                        vero atque at libero iste voluptatem molestiae aliquid quas, tenetur vel et blanditiis. Maiores
+                        tenetur facere quidem nostrum corporis eaque. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Esse, quo voluptatibus! Repellendus quos voluptatum corrupti, eius blanditiis cupiditate
+                        facilis neque maxime, accusamus error aliquam accusantium! Voluptates impedit assumenda optio
+                        commodi?</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Sair</button>
@@ -201,7 +210,7 @@
         </div>
     </div>
 
-    <?php } ?>
+
 
     <!--JS-->
 
