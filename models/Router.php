@@ -10,7 +10,7 @@ class Router{
     }
 
     public function direct($uri){
-       
+       var_dump($routes);
         if (array_key_exists($uri, $this->routes)){
          return $this->routes[$uri];
        } 
@@ -23,6 +23,7 @@ class Router{
         
         $router = new static;
         require $file;
+        var_dump($file);
         return $router;
     }
 }
