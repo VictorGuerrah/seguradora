@@ -13,13 +13,8 @@
 
 
 <body>
-    <div class="intro">
-        <nav class="navbar navbar-light" style="background-color: #5271ff;">
-            <a class="navbar-brand" href="#">
-                <img src="seguradoralogo.png" width="30" height="30" alt="">
-            </a>
-        </nav>
-    </div>
+
+<?php require '../../assets/html/header.php'; ?>
 
 
     <div class="tabela-seguros">
