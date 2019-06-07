@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Seguradora - Funcionário</title>
-    <link href="funcionario.css" rel="stylesheet" type="text/css">
+    <link href="../../assets/css/funcionario.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css">
 </head>
 <body>
