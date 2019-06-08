@@ -14,6 +14,9 @@ class controller{
 
      	require 'views/cargo/cargo.php';
 	}
+
+	
+
 }
 
  
