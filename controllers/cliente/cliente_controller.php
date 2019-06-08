@@ -1,3 +1,3 @@
 <?php
 
-require '../../views/clientes/clientes.php';
+require 'views/clientes/clientes.php';

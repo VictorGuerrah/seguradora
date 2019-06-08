@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>CRUD clientes</title>
-  <link href="../../assets/css/cliente.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/cliente.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css">
 </head>
 
@@ -14,7 +14,7 @@
 
 <body>
 
-<?php require '../../assets/html/header.php'; ?>
+<?php require 'assets/html/header.php'; ?>
 
 
 

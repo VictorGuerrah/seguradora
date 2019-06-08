@@ -6,16 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>CRUD Cargo</title>
-    <link href="../../assets/css/cargo.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css">
+    <link href="assets/css/cargo.css" rel="stylesheet" type="text/css">
+  
 </head>
-
-<?php require '../../controllers/cargo/cargo_controller.php'; ?>
-
 
 <body>
     
-    <?php require '../../assets/html/header.php'; ?>
+    <?php require 'assets/html/header.php'; ?>
 
     <div class="tabela-seguros">
         <table class="table table-striped">
@@ -49,8 +47,6 @@
                     </td>
                     <td><?= $cargo->departamento_nome; ?> </td>
                     <td>
-                        <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                            data-target="#exibirCargo">Exibir</button>
                         <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
                             data-target="#editarCargo">Editar</button>
                         <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
@@ -210,6 +206,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
 </body>
 
-<?php require '../../assets/html/footer.php'; ?>
+<?php require 'assets/html/footer.php'; ?>
 
 </html>

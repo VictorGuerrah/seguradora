@@ -1,3 +1,3 @@
 <?php
 
-require '../../views/departamento/departamento.php';
+require 'views/departamento/departamento.php';

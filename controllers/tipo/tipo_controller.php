@@ -1,3 +1,3 @@
 <?php
 
-require '../../views/tipo/tipo.php';
+require 'views/tipo/tipo.php';

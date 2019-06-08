@@ -1,6 +1,6 @@
 <?php
 
-$database = require '../../models/bootstrap.php';
+$database = require 'models/bootstrap.php';
 
 $router = new Router;
 

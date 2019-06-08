@@ -1,3 +1,3 @@
 <?php
 
-require '../../views/vendas/vendas.php';
+require 'views/vendas/vendas.php';

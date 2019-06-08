@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>CRUD Seguro</title>
-    <link href="../../assets/css/seguro.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/seguro.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css">
 </head>
 
 
 
 <body>
-<?php require '../../assets/html/header.php'; ?>
+<?php require 'assets/html/header.php'; ?>
 
 
     <div class="tabela-seguros">

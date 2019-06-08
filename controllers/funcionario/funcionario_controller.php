@@ -1,3 +1,3 @@
 <?php
 
-require '../../views/funcionario/funcionario.php';
+require 'views/funcionario/funcionario.php';
