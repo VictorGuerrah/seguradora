@@ -37,5 +37,7 @@ class Router{
         if(! method_exists($controller, $action)){
             throw new Exception("{$controller} não responde a {$action} ação");
         }
+
+        return $controller->$action();
     }
 }
