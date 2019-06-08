@@ -15,7 +15,7 @@ class controller{
      	require 'views/cargo/cargo.php';
 	}
 
-	$router->('', 'cargo_controller@cargo')
+	
 
 }
 
