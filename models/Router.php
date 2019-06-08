@@ -12,13 +12,12 @@ class Router{
         $this->routes = $routes;
     }
 
-    public function direct($uri){   
-        if (array_key_exists($uri, $this->routes)){
-         return $this->routes[$uri];
+    public function direct($uri, $requestType){
+
+        if (array_key_exists($uri, $this->routes[$requestType])){
+         return $this->callAction(...explode('@', $this->routes[$requestType]));
        } 
-       else{
-           throw new Exception('Nenhuma rota associada a essa URI');
-       }
+    
     }
 
     public static function load($file){
@@ -30,5 +29,13 @@ class Router{
 
     public function get($uri, $controller){
         $this->routes['GET'][$uri] = $controller;
+    }
+
+    public function callAction($controller, $action){
+        $controller = new $controller;
+
+        if(! method_exists($controller, $action)){
+            throw new Exception("{$controller} não responde a {$action} ação");
+        }
     }
 }
