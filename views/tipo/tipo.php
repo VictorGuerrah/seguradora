@@ -23,7 +23,7 @@
                 <tr>
                     <th scope="col" class="th-lg"> </th>
                     <th scope="col" class="th-lg">Tipo</th>
-                    <th scope="col" class="th-lg">Quantidade</th>
+                    
                     <th scope="col" class="fix">
                         <button class="btn btn-primary botaoAdd" data-toggle="modal" data-target="#addTipo"
                             type="submit">Adicionar</button>
@@ -31,10 +31,22 @@
                 </tr>
             </thead>
             <tbody>
+
+                <?php foreach($tipos as $tipo) : ?>
+
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Saúde</td>
-                    <td>0</td>
+                    <th scope="row">
+
+                    <?= $tipo->id; ?>
+
+                    </th>
+
+                    <td>
+
+                    <?= $tipo->nome; ?>
+                    
+                    </td>
+                   
                     <td>
                         <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
                             data-target="#exibirSeguro">Exibir</button>
@@ -44,71 +56,10 @@
                             data-target="#excluirSeguro">Excluir</button>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Risco Financeiro</td>
-                    <td>0</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                            data-target="#exibirSeguro">Exibir</button>
-                        <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                            data-target="#editarSeguro">Editar</button>
-                        <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                            data-target="#excluirSeguro">Excluir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Automóvel</td>
-                    <td>0</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                            data-target="#exibirSeguro">Exibir</button>
-                        <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                            data-target="#editarSeguro">Editar</button>
-                        <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                            data-target="#excluirSeguro">Excluir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Patrimonial</td>
-                    <td>0</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                            data-target="#exibirSeguro">Exibir</button>
-                        <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                            data-target="#editarSeguro">Editar</button>
-                        <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                            data-target="#excluirSeguro">Excluir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">5</th>
-                    <td>Rural</td>
-                    <td>0</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                            data-target="#exibirSeguro">Exibir</button>
-                        <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                            data-target="#editarSeguro">Editar</button>
-                        <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                            data-target="#excluirSeguro">Excluir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">6</th>
-                    <td>Responsabilidades</td>
-                    <td>0</td>
-                    <td>
-                        <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                            data-target="#exibirSeguro">Exibir</button>
-                        <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                            data-target="#editarSeguro">Editar</button>
-                        <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                            data-target="#excluirSeguro">Excluir</button>
-                    </td>
-                </tr>
+                
+
+                <?php endforeach; ?>
+
             </tbody>
         </table>
     </div>
@@ -129,20 +80,23 @@
                 </div>
                 <div class="modal-body">
 
-                    <form>
+                <form action="processos.php" method='POST'>
                         <div class="form-group">
                             <label for="nomeSeguro">Tipo</label>
                             <input type="name" class="form-control" id="nomeSeguro" placeholder="Tipo #">
                         </div>
+
                         <div class="form-group">
                             <label for="tipoSeguro">Descrição</label>
                             <input type="tipo" class="form-control" id="tipoSeguro" placeholder="Descrição #">
                         </div>
-                    </form>
+                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="button" class="btn btn-primary">Salvar</button>
+                </form>
                 </div>
             </div>
         </div>
