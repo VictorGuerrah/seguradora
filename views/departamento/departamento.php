@@ -29,9 +29,20 @@
         </tr>
       </thead>
       <tbody>
+
+       <?php foreach($departamentos as $departamento) : ?>
+
         <tr>
-          <th scope="row">1</th>
-          <td>Fisica</td>
+          <th scope="row">
+          
+          <?= $departamento->id; ?>
+          
+          </th>
+          <td>
+          
+          <?= $departamento->nome; ?>
+          
+          </td>
           <td>
             <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
               data-target="#editarDep">Editar</button>
@@ -39,56 +50,9 @@
               data-target="#excluirDep">Excluir</button>
           </td>
         </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Matematica</td>
-          <td>
-            <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-              data-target="#editarDep">Editar</button>
-            <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-              data-target="#excluirDep">Excluir</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Engenharia</td>
-          <td>
-            <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-              data-target="#editarDep">Editar</button>
-            <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-              data-target="#excluirDep">Excluir</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Quimica</td>
-          <td>
-            <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-              data-target="#editarDep">Editar</button>
-            <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-              data-target="#excluirDep">Excluir</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Letras</td>
-          <td>
-            <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-              data-target="#editarDep">Editar</button>
-            <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-              data-target="#excluirDep">Excluir</button>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">1</th>
-          <td>Biologia</td>
-          <td>
-            <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-              data-target="#editarDep">Editar</button>
-            <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-              data-target="#excluirDep">Excluir</button>
-          </td>
-        </tr>
+        
+        <?php endforeach; ?>
+
       </tbody>
     </table>
   </div>
