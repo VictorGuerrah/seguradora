@@ -26,14 +26,13 @@
 }
 
 .tabela-clientes{
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
 .centralizado{
     text-align: center;
-    margin-bottom:-10px;
 }
 
 .botao {
@@ -47,7 +46,7 @@
 }
 
 .fix{
-    width: 18%;
+    width: 35%;
 }
 
 @media (max-width: 1150px){
