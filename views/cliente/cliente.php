@@ -32,22 +32,60 @@
             </th>
           </tr>
         </thead>
+
+        <?php foreach($clientes as $cliente) : ?>
+
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
+            <th scope="row">
+
+            <?=$cliente->id;?>
+
+            </th>
             <td>
-            <button type="button" class="btn btn-outline-success botao" data-toggle="modal"data-target="#exibirCliente">Exibir</button>
+            
+            <?=$cliente->nome;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->email;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->cpf;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->cidade;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->bairro;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->rua;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->numero;?>
+            
+            </td>
+            <td>
               <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
                 data-target="#editarCliente">Editar</button>
               <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
                 data-target="#excluirCliente">Excluir</button>
             </td>
           </tr>
-            </td>
-          </tr>
+          
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>
