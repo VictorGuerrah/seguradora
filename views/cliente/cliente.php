@@ -152,30 +152,30 @@
             <form>
               <div class="form-group">
                 <label for="nomeCliente">Nome</label>
-                <input type="name" class="form-control" id="nomeCliente" placeholder="Joao da Silva">
+                <input type="name" class="form-control" id="nomeCliente" placeholder="<?= $cliente->nome ?>">
               </div>
               <div class="form-group">
                 <label for="emailCliente">E-mail</label>
-                <input type="email" class="form-control" id="emailCliente" placeholder="joao@joao.com.br">
+                <input type="email" class="form-control" id="emailCliente" placeholder="<?= $cliente->email ?>">
               </div>
               <div class="form-group">
                 <label for="cpfCliente">CPF</label>
-                <input type="" class="form-control" id="cpfCliente" placeholder="111.111.111-11">
+                <input type="" class="form-control" id="cpfCliente" placeholder="<?= $cliente->cpf ?>">
               </div>
 
               <div class="form-group">
                 <div class="row">
-                  <div class="col-md-5">
+                  <div class="col-md-12">
                     <label for="ruaCliente">Rua</label>
-                    <input type="" class="form-control" id="ruaCliente" placeholder="Av.Rio Branco">
+                    <input type="" class="form-control" id="ruaCliente" placeholder="<?= $cliente->rua ?>">
                   </div>
                   <div class="col-md-5">
                     <label for="bairroCliente">Bairro</label>
-                    <input type="" class="form-control" id="bairroCliente" placeholder="Centro">
+                    <input type="" class="form-control" id="bairroCliente" placeholder="<?= $cliente->bairro ?>">
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                     <label for="numeroCliente">Número</label>
-                    <input type="" class="form-control" id="numeroCliente" placeholder="111">
+                    <input type="" class="form-control" id="numeroCliente" placeholder="<?= $cliente->numero ?>">
                   </div>
 
                 </div>
@@ -183,7 +183,7 @@
 
               <div class="form-group">
                 <label for="cidadeCliente">Cidade</label>
-                <input type="" class="form-control" id="cidadeCliente" placeholder="Juiz de Fora">
+                <input type="" class="form-control" id="cidadeCliente" placeholder="<?= $cliente->cidade ?>">
               </div>
             </form>
 
@@ -213,11 +213,11 @@
             <form>
               <div class="form-group">
                 <label for="nomeCliente">Nome</label>
-                <input type="name" class="form-control" id="nomeCliente" placeholder="Joao da Silva" readonly>
+                <input type="name" class="form-control" id="nomeCliente" placeholder="<?= $cliente->nome ?>" readonly>
               </div>
               <div class="form-group">
                 <label for="cpfCliente">CPF</label>
-                <input type="" class="form-control" id="cpfCliente" placeholder="111.111.111-11" readonly>
+                <input type="" class="form-control" id="cpfCliente" placeholder="<?= $cliente->cpf ?>" readonly>
               </div>
             </form>
             <h5 class="centralizado">Deseja Realmente excluir esse cliente?</h5>
