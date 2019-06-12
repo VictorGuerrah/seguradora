@@ -36,16 +36,51 @@
             </th>
           </tr>
         </thead>
+
+        <?php foreach($clientes as $cliente) : ?>
+
         <tbody>
           <tr>
-            <th scope="row">1</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
+            <th scope="row">
+
+            <?=$cliente->id;?>
+
+            </th>
+            <td>
+            
+            <?=$cliente->nome;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->email;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->cpf;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->cidade;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->bairro;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->rua;?>
+            
+            </td>
+            <td>
+            
+            <?=$cliente->numero;?>
+            
+            </td>
             <td>
               <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
                 data-target="#editarCliente">Editar</button>
@@ -53,86 +88,8 @@
                 data-target="#excluirCliente">Excluir</button>
             </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
-            <td>
-              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                data-target="#editarCliente">Editar</button>
-              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                data-target="#excluirCliente">Excluir</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
-            <td>
-              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                data-target="#editarCliente">Editar</button>
-              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                data-target="#excluirCliente">Excluir</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
-            <td>
-              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                data-target="#editarCliente">Editar</button>
-              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                data-target="#excluirCliente">Excluir</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
-            <td>
-              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                data-target="#editarCliente">Editar</button>
-              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                data-target="#excluirCliente">Excluir</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
-            <td>
-              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                data-target="#editarCliente">Editar</button>
-              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                data-target="#excluirCliente">Excluir</button>
-            </td>
-          </tr>
+          
+          <?php endforeach; ?>
         </tbody>
       </table>
     </div>
