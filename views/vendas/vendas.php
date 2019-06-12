@@ -25,12 +25,8 @@
                 <th scope="col" class="th-lg"> </th>
                 <th scope="col" class="th-lg">Cliente</th>
                 <th scope="col" class="th-lg">Funcionário</th>
-                <th scope="col" class="th-lg">Quantidade</th>
                 <th scope="col" class="th-lg">Seguro</th>
-                <th scope="col" class="th-lg">Preço</th>
-                <th scope="col" class="th-lg">Desconto</th>
                 <th scope="col" class="th-lg">Preço Final</th>
-                <th scope="col" class="th-lg">Anotações</th>
                 <th scope="col" class="fix">
                     <button class="btn btn-primary botaoAdd" data-toggle="modal" data-target="#addTipo"
                         type="submit">Adicionar</button>
@@ -42,107 +38,8 @@
                 <th scope="row">1</th>
                 <td>João</td>
                 <td>Bia</td>
-                <td>1</td>
                 <td>Saúde</td>
-                <td>R$550,00</td>
-                <td>R$50,00</td>
                 <td>R$500,00</td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                        data-target="#exibirSeguro">Exibir</button>
-                    <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                        data-target="#editarSeguro">Editar</button>
-                    <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                        data-target="#excluirSeguro">Excluir</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Margarida</td>
-                <td>Ana</td>
-                <td>1</td>
-                <td>Automóvel</td>
-                <td>R$2500,00</td>
-                <td>R$500,00</td>
-                <td>R$2000,00</td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                        data-target="#exibirSeguro">Exibir</button>
-                    <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                        data-target="#editarSeguro">Editar</button>
-                    <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                        data-target="#excluirSeguro">Excluir</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Joana</td>
-                <td>Carla</td>
-                <td>2</td>
-                <td>Rural</td>
-                <td>R$3000,00</td>
-                <td>R$400,00</td>
-                <td>R$5200,00</td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                        data-target="#exibirSeguro">Exibir</button>
-                    <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                        data-target="#editarSeguro">Editar</button>
-                    <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                        data-target="#excluirSeguro">Excluir</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td>Cleiton</td>
-                <td>Débora</td>
-                <td>1</td>
-                <td>Risco Financeiro</td>
-                <td>R$500,00</td>
-                <td>R$0,00</td>
-                <td>R$500,00</td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                        data-target="#exibirSeguro">Exibir</button>
-                    <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                        data-target="#editarSeguro">Editar</button>
-                    <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                        data-target="#excluirSeguro">Excluir</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-                <td>Joaquim</td>
-                <td>Fábia</td>
-                <td>1</td>
-                <td>Responsabilidades</td>
-                <td>R$550,00</td>
-                <td>R$50,00</td>
-                <td>R$500,00</td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                        data-target="#exibirSeguro">Exibir</button>
-                    <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                        data-target="#editarSeguro">Editar</button>
-                    <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                        data-target="#excluirSeguro">Excluir</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">6</th>
-                <td>Pedro</td>
-                <td>Erica</td>
-                <td>3</td>
-                <td>Patrimonial</td>
-                <td>R$1000,00</td>
-                <td>R$100,00</td>
-                <td>R$2700,00</td>
-                <td></td>
                 <td>
                     <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
                         data-target="#exibirSeguro">Exibir</button>

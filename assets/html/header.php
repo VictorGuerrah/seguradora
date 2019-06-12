@@ -29,7 +29,7 @@
                   <a class="nav-link text-white" href="/funcionarios">Funcionários</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="cargos">Cargos</a>
+                  <a class="nav-link text-white" href="/cargos">Cargos</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link text-white" href="/departamentos">Departamentos</a>
