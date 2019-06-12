@@ -24,8 +24,8 @@
           <tr>
             <th scope="col"> </th>
             <th scope="col">Nome</th>
-            <th scope="col">E-mail</th>
-            <th scope="col">CPF</th>
+            <th scope="col" class="centralizado">E-mail</th>
+            <th scope="col" class="centralizado">CPF</th>
             <th scope="col" class="fix">
               <button class="btn btn-primary btn-sm botaoAdd" data-toggle="modal" data-target="#addClienteModal"
                 type="submit">Adicionar</button>
@@ -242,15 +242,22 @@
                     </button>
                 </div>
                 <div class="modal-body">
-
-                    <p><b>Nome:</b> #</p>
+                  <?php foreach($clientes as $cliente) : ?>
+                    <p><b>Nome: </b> <?= $cliente->nome ?> </p>
                     <hr>
-                    <p><b>Email:</b> #</p>
+                    <p><b>Email: </b> <?= $cliente->email ?> </p>
                     <hr>
-                    <p><b>CPF:</b> #</p>
+                    <p><b>CPF: </b> <?= $cliente->cpf ?> </p>
                     <hr>
-                    <p><b>Cidade:</b> #</p>
-
+                    <p><b>Cidade: </b><?= $cliente->cidade ?></p>
+                    <hr>
+                    <p><b>Bairro :</b> <?= $cliente->bairro ?></p>
+                    <hr>
+                    <p><b>Rua: </b> <?= $cliente->rua ?></p>
+                    <hr>
+                    <p><b>Número: </b> <?= $cliente->numero ?></p>
+                    <hr>
+                    <?php endforeach; ?>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Sair</button>
