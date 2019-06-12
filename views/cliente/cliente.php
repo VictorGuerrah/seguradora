@@ -57,27 +57,9 @@
             <?=$cliente->cpf;?>
             
             </td>
+
             <td>
-            
-            <?=$cliente->cidade;?>
-            
-            </td>
-            <td>
-            
-            <?=$cliente->bairro;?>
-            
-            </td>
-            <td>
-            
-            <?=$cliente->rua;?>
-            
-            </td>
-            <td>
-            
-            <?=$cliente->numero;?>
-            
-            </td>
-            <td>
+            <button type="button" class="btn btn-outline-success botao" data-toggle="modal" data-target="#exibirCliente">Exibir</button>
               <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
                 data-target="#editarCliente">Editar</button>
               <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
@@ -261,18 +243,13 @@
                 </div>
                 <div class="modal-body">
 
-                    <p><b>Seguro:</b> Seguro 01</p>
+                    <p><b>Nome:</b> #</p>
                     <hr>
-                    <p><b>Tipo:</b> Tipo 01</p>
+                    <p><b>Email:</b> #</p>
                     <hr>
-                    <p><b>Valor:</b> R$00,00</p>
+                    <p><b>CPF:</b> #</p>
                     <hr>
-                    <p><b>Descrição:</b> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aperiam
-                        vero atque at libero iste voluptatem molestiae aliquid quas, tenetur vel et blanditiis. Maiores
-                        tenetur facere quidem nostrum corporis eaque. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Esse, quo voluptatibus! Repellendus quos voluptatum corrupti, eius blanditiis cupiditate
-                        facilis neque maxime, accusamus error aliquam accusantium! Voluptates impedit assumenda optio
-                        commodi?</p>
+                    <p><b>Cidade:</b> #</p>
 
                 </div>
                 <div class="modal-footer">
