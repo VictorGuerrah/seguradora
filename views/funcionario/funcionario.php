@@ -31,7 +31,9 @@
           </tr>
         </thead>
         <tbody>
-            
+
+          <?php foreach($funcionarios as $funcionario) : ?>
+
             <tr>
               <th scope="row">1</th>
               <td><div class="foto"><img src="img/menina1.jpg"></div></td>
@@ -39,7 +41,11 @@
               <td>ana.sem@email.br</td>
               
             
-              <td>Agente de seguros</td>
+              <td>
+              
+              <?= $funcionario->id; ?>
+              
+              </td>
               <td>
                 <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#editarFuncionario">Editar</button>
                 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#excluirCliente">Excluir</button>
