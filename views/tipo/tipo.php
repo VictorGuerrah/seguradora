@@ -3,7 +3,9 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <title>CRUD Tipo</title>
     <link href="assets/css/tipo.css" rel="stylesheet" type="text/css">
@@ -48,8 +50,6 @@
                     </td>
                    
                     <td>
-                        <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                            data-target="#exibirSeguro">Exibir</button>
                         <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
                             data-target="#editarSeguro">Editar</button>
                         <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
@@ -166,38 +166,6 @@
     </div>
 
 
-
-    <div class="modal fade" id="exibirSeguro" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exibirSeguroModal">Detalhes</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <p><b>Tipo:</b> Tipo #</p>
-                    <hr>
-                    <p><b>Quantidade:</b> ###</p>
-                    <hr>
-                    <p><b>Descrição:</b> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aperiam
-                        vero atque at libero iste voluptatem molestiae aliquid quas, tenetur vel et blanditiis. Maiores
-                        tenetur facere quidem nostrum corporis eaque. Lorem ipsum dolor sit amet consectetur adipisicing
-                        elit. Esse, quo voluptatibus! Repellendus quos voluptatum corrupti, eius blanditiis cupiditate
-                        facilis neque maxime, accusamus error aliquam accusantium! Voluptates impedit assumenda optio
-                        commodi?</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Sair</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
     <!--JS-->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -207,12 +175,6 @@
 
 
 
-<footer class="page-footer font-small blue">
-
-    <div class="footer-copyright text-center py-3">© 2019 Copyright:
-        <a href="https://codejr.com.br/"> codejr.com.br</a>
-    </div>
-
-</footer>
+<?php require 'assets/html/footer.php'; ?>
 
 </html>

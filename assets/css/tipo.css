@@ -6,54 +6,57 @@
     font: 30px;
     color: white;
     
-}
-
-
-@font-face{
+    }
+    
+    
+    @font-face{
     font-family: AbrilFatFace;
     src:"/Users/arthursantiago/Desktop/UFJF/Trainee/fontes"('AbrilFatFace.otf');
-}
-
-.seguradora-nome{
+    }
+    
+    .seguradora-nome{
     text-align: left;
     color: white;
-}
-
-.tabela-seguros{
-    margin-left: 4%;
-    margin-right: 4%;
+    }
+    
+    .tabela-seguros{
+    margin-left: 25% !important;
+    margin-right: 25%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
-}
-
-.centralizado{
+    }
+    
+    .centralizado{
     text-align: center;
     margin-bottom:-10px;
-}
-
-.botao {
+    }
+    
+    .botao {
     width: 80px;
     height: 35px;
     
-}
-
-.botaoAdd{
+    }
+    
+    .botaoAdd{
     margin-left: 45px;
-}
-
-.navbar{
+    }
+    
+    .navbar{
     width: 100%;
     margin-bottom: 3%;
-}
-
-.navbar img{
-    margin-left: 115%;
-}
-
-.fix{
+    }
+    
+    .barra{
+    margin-bottom: 2%;
+    background: #007bff;
+    background: linear-gradient(to right, #5271ff, #0062E6, #33AEFF);
+    
+    }
+    
+    .fix{
     width: 30%;
-}
-
-@media (max-width: 800px){
+    }
+    
+    @media (max-width: 800px){
     .tabela-seguros{
         margin-left: 5%;
         margin-right: 5%;
@@ -61,31 +64,32 @@
     .navbar{
         width: 100%;
     }
-}
-
-@media (max-width: 500px){
-    .tabela-seguros{
-        margin-right: -25%;
     }
-    .navbar{
-        width: 130%;
-    }
-}
-
-@media (max-width: 400px){
+    
+    @media (max-width: 500px){
     .tabela-seguros{
-        margin-right: -31%;
+        margin-right: -30%;
     }
     .navbar{
         width: 135%;
     }
-}
-
-@media (max-width: 350px){
+    }
+    
+    @media (max-width: 400px){
     .tabela-seguros{
-        margin-right: -50%;
+        margin-right: -48%;
     }
     .navbar{
-        width: 160%;
+        width: 155%;
     }
-}
+    }
+    
+    @media (max-width: 350px){
+    .tabela-seguros{
+        margin-right: -67%;
+    }
+    .navbar{
+        width: 173%;
+    }
+    }
+    

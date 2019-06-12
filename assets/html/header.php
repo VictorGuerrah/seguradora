@@ -13,26 +13,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link text-white" href="views/cliente/cliente.php">Cliente <span class="sr-only">(current)</span></a>
+                  <a class="nav-link text-white" href="/clientes">Clientes <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="views/seguro/seguro.php">Seguro</a>
+                  <a class="nav-link text-white" href="/seguros">Seguros</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="views/tipo/tipo.php">Tipo</a>
+                  <a class="nav-link text-white" href="/tipos">Tipos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="views/vendas/vendas.php">Vendas</a>
+                  <a class="nav-link text-white" href="/vendas">Vendas</a>
                 </li>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="views/funcionario/funcionario.php">Funcionario</a>
+                  <a class="nav-link text-white" href="/funcionarios">Funcionários</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="cargo">Cargos</a>
+                  <a class="nav-link text-white" href="cargos">Cargos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-white" href="views/departamento/departamento.php">Departamento</a>
+                  <a class="nav-link text-white" href="/departamentos">Departamentos</a>
                 </li>
               </ul>
             </div>

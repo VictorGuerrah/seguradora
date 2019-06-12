@@ -26,10 +26,6 @@
             <th scope="col">Nome</th>
             <th scope="col">E-mail</th>
             <th scope="col">CPF</th>
-            <th scope="col">Cidade</th>
-            <th scope="col">Bairro</th>
-            <th scope="col">Rua</th>
-            <th scope="col">Número</th>
             <th scope="col" class="fix">
               <button class="btn btn-primary btn-sm botaoAdd" data-toggle="modal" data-target="#addClienteModal"
                 type="submit">Adicionar</button>
@@ -42,95 +38,14 @@
             <td>Joao</td>
             <td>joao@joao.com.br</td>
             <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
             <td>
+            <button type="button" class="btn btn-outline-success botao" data-toggle="modal"data-target="#exibirCliente">Exibir</button>
               <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
                 data-target="#editarCliente">Editar</button>
               <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
                 data-target="#excluirCliente">Excluir</button>
             </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
-            <td>
-              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                data-target="#editarCliente">Editar</button>
-              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                data-target="#excluirCliente">Excluir</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
-            <td>
-              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                data-target="#editarCliente">Editar</button>
-              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                data-target="#excluirCliente">Excluir</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
-            <td>
-              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                data-target="#editarCliente">Editar</button>
-              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                data-target="#excluirCliente">Excluir</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
-            <td>
-              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                data-target="#editarCliente">Editar</button>
-              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                data-target="#excluirCliente">Excluir</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Joao</td>
-            <td>joao@joao.com.br</td>
-            <td>111.111.111-11</td>
-            <td>Juiz de Fora</td>
-            <td>Centro</td>
-            <td>Av. Rio Branco</td>
-            <td>111</td>
-            <td>
-              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                data-target="#editarCliente">Editar</button>
-              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                data-target="#excluirCliente">Excluir</button>
             </td>
           </tr>
         </tbody>
@@ -295,6 +210,40 @@
         </div>
       </div>
     </div>
+
+
+    <div class="modal fade" id="exibirCliente" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exibirSeguroModal">Detalhes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <p><b>Seguro:</b> Seguro 01</p>
+                    <hr>
+                    <p><b>Tipo:</b> Tipo 01</p>
+                    <hr>
+                    <p><b>Valor:</b> R$00,00</p>
+                    <hr>
+                    <p><b>Descrição:</b> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum aperiam
+                        vero atque at libero iste voluptatem molestiae aliquid quas, tenetur vel et blanditiis. Maiores
+                        tenetur facere quidem nostrum corporis eaque. Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Esse, quo voluptatibus! Repellendus quos voluptatum corrupti, eius blanditiis cupiditate
+                        facilis neque maxime, accusamus error aliquam accusantium! Voluptates impedit assumenda optio
+                        commodi?</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Sair</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
   <!--JS-->
 
