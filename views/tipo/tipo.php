@@ -85,13 +85,6 @@
                             <label for="nomeSeguro">Tipo</label>
                             <input type="name" class="form-control" id="nomeSeguro" placeholder="Tipo #">
                         </div>
-
-                        <div class="form-group">
-                            <label for="tipoSeguro">Descrição</label>
-                            <input type="tipo" class="form-control" id="tipoSeguro" placeholder="Descrição #">
-                        </div>
-                    
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -117,11 +110,7 @@
                     <form>
                         <div class="form-group">
                             <label for="nomeSeguro">Tipo</label>
-                            <input type="name" class="form-control" id="nomeSeguro" placeholder="Tipo #">
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoSeguro">Descrição</label>
-                            <input type="tipo" class="form-control" id="tipoSeguro" placeholder="Descrição #">
+                            <input type="name" class="form-control" id="nomeSeguro" placeholder="<?= $tipo->nome; ?>">
                         </div>
                     </form>
                 </div>
@@ -145,16 +134,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Tipo</label>
-                            <input type="name" class="form-control" id="nomeSeguro" placeholder="Tipo #" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoSeguro">Descrição</label>
-                            <input type="" class="form-control" id="tipoSeguro" placeholder="Descrição #" readonly>
-                        </div>
-                    </form>
                     <h5 class="centralizado">Deseja Realmente excluir o tipo de seguro?</h5>
                 </div>
                 <div class="modal-footer">

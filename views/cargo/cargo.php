@@ -61,7 +61,7 @@
     </div>
 
 
-
+    <?php foreach($cargos as $cargo) { ?>
 
 
 
@@ -116,15 +116,15 @@
                     <form>
                         <div class="form-group">
                             <label for="nomeSeguro">Cargo</label>
-                            <input type="name" class="form-control"placeholder="Cargo #">
+                            <input type="name" class="form-control"placeholder="<?= $cargo->nome; ?> ">
                         </div>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Salário</label>
-                            <input type="name" class="form-control"placeholder="Salário #">
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoSeguro">Descrição</label>
-                            <input type="tipo" class="form-control" placeholder="Descrição #">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-outline-primary dropdown-toggle"          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Departamento
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Departamentos</a>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -151,15 +151,11 @@
                     <form>
                         <div class="form-group">
                             <label for="nomeSeguro">Cargo</label>
-                            <input type="name" class="form-control" placeholder="Cargo #" readonly>
+                            <input type="name" class="form-control" placeholder="<?= $cargo->nome; ?>" readonly>
                         </div>
                         <div class="form-group">
-                            <label for="nomeSeguro">Salário</label>
-                            <input type="name" class="form-control" placeholder="Salário #" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoSeguro">Descrição</label>
-                            <input type="" class="form-control" placeholder="Descrição #" readonly>
+                            <label for="nomeSeguro">Departamento</label>
+                            <input type="name" class="form-control" placeholder="<?= $cargo->departamento_nome; ?>" readonly>
                         </div>
                     </form>
                     <h5 class="centralizado">Deseja Realmente excluir o cargo?</h5>
@@ -171,8 +167,6 @@
             </div>
         </div>
     </div>
-
-    <?php foreach($cargos as $cargo) { ?>
 
     <div class="modal fade" id="exibirCargo" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
