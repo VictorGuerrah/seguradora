@@ -34,12 +34,13 @@
             </tr>
         </thead>
         <tbody>
+        <?php  foreach($vendas as $venda) : ?>
             <tr>
-                <th scope="row">1</th>
-                <td>João</td>
-                <td>Bia</td>
-                <td>Saúde</td>
-                <td>R$500,00</td>
+                <th scope="row"><?= $venda->id; ?> </th>
+                <td><?= $venda->cliente_nome; ?></td>
+                <td><?= $venda->funcionario_nome; ?></td>
+                <td><?= $venda->seguro_nome; ?></td>
+                <td><?= $venda->preco_final; ?></td>
                 <td>
                     <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
                         data-target="#exibirSeguro">Exibir</button>
@@ -49,6 +50,7 @@
                         data-target="#excluirSeguro">Excluir</button>
                 </td>
             </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>
@@ -58,11 +60,11 @@
 
 
 
-    <div class="modal fade" id="addClienteModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="addTipo" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="addClienteModalTitulo">Adicionar Cliente</h5>
+            <h5 class="modal-title" id="addClienteModalTitulo">Adicionar Venda</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -70,45 +72,51 @@
           <div class="modal-body">
 
             <form>
-              <div class="form-group">
-                <label for="nomeCliente">Nome</label>
-                <input type="name" class="form-control" id="nomeCliente">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary dropdown-toggle"          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Cliente
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Clientes</a>
               </div>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary dropdown-toggle"          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Funcionário
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Funcionários</a>
+              </div>
+              <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary dropdown-toggle"          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Seguro
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Seguros</a>
+              </div>
+            </div>
+            </div>
               <div class="form-group">
-                <label for="emailCliente">E-mail</label>
+                <label for="emailCliente">Preço</label>
                 <input type="email" class="form-control" id="emailCliente">
               </div>
               <div class="form-group">
-                <label for="cpfCliente">CPF</label>
+                <label for="cpfCliente">Desconto</label>
                 <input type="" class="form-control" id="cpfCliente">
               </div>
-
               <div class="form-group">
-                <div class="row">
-                  <div class="col-md-5">
-                    <label for="ruaCliente">Rua</label>
-                    <input type="" class="form-control" id="ruaCliente">
-                  </div>
-                  <div class="col-md-5">
-                    <label for="bairroCliente">Bairro</label>
-                    <input type="" class="form-control" id="bairroCliente">
-                  </div>
-                  <div class="col-md-2">
-                    <label for="numeroCliente">Número</label>
-                    <input type="" class="form-control" id="numeroCliente">
-                  </div>
-
-                </div>
+                <label for="cpfCliente">Preço Final</label>
+                <input type="" class="form-control" id="cpfCliente">
               </div>
-
               <div class="form-group">
-                <label for="cidadeCliente">Cidade</label>
+                <label for="cpfCliente">Quantidade</label>
+                <input type="" class="form-control" id="cpfCliente">
+                </div>
+              <div class="form-group">
+                <label for="cidadeCliente">Anotações</label>
                 <input type="" class="form-control" id="cidadeCliente">
               </div>
             </form>
-
-
-
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -119,7 +127,7 @@
     </div>
 
 
-    <div class="modal fade" id="editarCliente" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="editarSeguro" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -181,7 +189,7 @@
 
 
 
-    <div class="modal fade" id="excluirCliente" tabindex="-1" role="dialog">
+    <div class="modal fade" id="excluirSeguro" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -210,6 +218,40 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="modal fade" id="exibirSeguro" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exibirSeguroModal">Detalhes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <?php foreach($clientes as $cliente) : ?>
+                    <p><b>Nome: </b> <?= $cliente->nome ?> </p>
+                    <hr>
+                    <p><b>Email: </b> <?= $cliente->email ?> </p>
+                    <hr>
+                    <p><b>CPF: </b> <?= $cliente->cpf ?> </p>
+                    <hr>
+                    <p><b>Cidade: </b><?= $cliente->cidade ?></p>
+                    <hr>
+                    <p><b>Bairro :</b> <?= $cliente->bairro ?></p>
+                    <hr>
+                    <p><b>Rua: </b> <?= $cliente->rua ?></p>
+                    <hr>
+                    <p><b>Número: </b> <?= $cliente->numero ?></p>
+                    <hr>
+                    <?php endforeach; ?>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Sair</button>
+                </div>
+            </div>
+        </div>
     </div>
 
   <!--JS-->
