@@ -45,10 +45,38 @@ class QueryBuilder{
 
         $statement = $this->pdo->prepare($sql);
 
+
         $statement->execute($parameters);
 
         }catch(Exception $e) {
-        die('Whoops, something went wrong. ');
+
+        die('Alguma coisa deu errado.');
+        }
+    }
+
+    public function delete($table, $parameters){
+
+        $sql = sprintf(
+
+        'delete from %s (%s) values (%s)',
+
+        $table,
+
+        implode(', ', array_keys($parameters)),
+        ':' . implode(', :', array_keys($parameters))
+        );
+
+
+        try{
+
+        $statement = $this->pdo->prepare($sql);
+
+
+        $statement->execute($parameters);
+
+        }catch(Exception $e) {
+
+        die('Alguma coisa deu errado.');
         }
     }
 }

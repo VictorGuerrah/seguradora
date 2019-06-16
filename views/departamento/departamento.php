@@ -57,7 +57,7 @@
     </table>
   </div>
 
-  <div class="modal fade" id="addDepModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal fade" id="addDepModal">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -68,21 +68,15 @@
         </div>
         <div class="modal-body">
 
-          <form>
-            <div class="form-group">
-              <input type="name" class="form-control" id="nomeDep">
-            </div>
+          <form method='POST' action='/addDepartamento'> 
+              <input name="nome">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Salvar</button>
           </form>    
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Salvar</button>
-          
-        </div>
-        
       </div>
     </div>
-  </div>
+</div>
   
 
 
@@ -124,19 +118,17 @@
           </button>
         </div>
         <div class="modal-body">
-          <form>
-            <div class="form-group">
+          <form method='POST' action='/deleteDepartamento'>
               <label for="nomeCliente">Nome</label>
               <input type="name" class="form-control" id="nomeCliente" placeholder="Nome do Departamento" readonly>
-            </div>
+              <h5 class="centralizado">Deseja Realmente excluir esse Departamento?</h5>
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+             <button type="submit" class="btn btn-danger">Excluir</button>
           </form>
-          <h5 class="centralizado">Deseja Realmente excluir esse Departamento?</h5>
+          
 
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-danger">Excluir</button>
-        </div>
+        
       </div>
     </div>
   </div>
