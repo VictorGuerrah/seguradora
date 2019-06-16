@@ -11,13 +11,10 @@
   
 <?php require 'assets/html/header.php'; ?>
 
-    <div class="intro">
-        
-      </div>
-       <div class="card" style="border-radius :3%">
-        <div class="tabela">
-        <table class="table table-striped  " >
-        <thead>
+  <div class="tabela-seguros">
+        <table class="table table-striped">
+            <thead>
+                <tr>
           <tr>
             <th scope="col"> </th>
             <th scope="col"></th>
@@ -40,6 +37,7 @@
               <?= $funcionario->id; ?>
               
               </th>
+              
               <td><div class="foto">
 
               <?= $funcionario->url_imagem; ?>
@@ -59,12 +57,13 @@
             
               <td>
               
-              
+              <?= $funcionario->cargo_nome; ?> </td>
               
               </td>
               <td>
                 <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#editarFuncionario">Editar</button>
-                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#excluirCliente">Excluir</button>
+                <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
+                            data-target="#excluirSeguro">Excluir</button>
               </td>
             </tr>
             <?php endforeach; ?>  
@@ -173,10 +172,27 @@
               <button type="button" class="btn btn-primary">Salvar</button>
           </div>
     </div>
-      
   </div>
 
-  
+  <div class="modal fade" id="excluirSeguro" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modalEcluir" id="excluirModal">Excluir Funcionario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="centralizado">Deseja Realmente excluir o funcionário?</h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 

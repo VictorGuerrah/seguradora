@@ -2,11 +2,10 @@
 
     $funcionarios=$app['database']->selectAll('funcionario');
 
-    foreach($cargos as $cargo)
+    foreach($funcionarios as $funcionario)
 		{
-            $funcionarios = $app['database']->select('funcionarios', "id =".$cargo->funcionarios_id );
-            $cargo->funcionarios_nome = $funcionarios[0]->nome;
-			$cargo->departamento_nome = $departamentos[0]->nome;
+			$cargos = $app['database']->select('cargo', "id =".$funcionario->cargo_id );
+			$funcionario->cargo_nome = $cargos[0]->nome;
 		}
 
 require 'views/funcionario/funcionario.php';
