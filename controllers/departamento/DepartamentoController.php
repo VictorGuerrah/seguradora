@@ -1,5 +1,5 @@
 <?php
 
-    $departamentos=$app['database']->selectAll('departamento');
+    $users=$app['database']->selectAll('users');
 
 require 'views/departamento/departamento.php';

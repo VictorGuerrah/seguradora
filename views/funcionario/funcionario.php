@@ -1,5 +1,5 @@
  <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-br">
 <head>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Seguradora - Funcionário</title>
@@ -35,15 +35,31 @@
           <?php foreach($funcionarios as $funcionario) : ?>
 
             <tr>
-              <th scope="row">1</th>
-              <td><div class="foto"><img src="img/menina1.jpg"></div></td>
-              <td>Ana</td>
-              <td>ana.sem@email.br</td>
+              <th scope="row">
+              
+              <?= $funcionario->id; ?>
+              
+              </th>
+              <td><div class="foto">
+
+              <?= $funcionario->url_imagem; ?>
+
+              </div></td>
+              <td>
+              
+              <?= $funcionario->nome; ?>
+              
+              </td>
+              <td>
+              
+              <?= $funcionario->email; ?>
+              
+              </td>
               
             
               <td>
               
-              <?= $funcionario->id; ?>
+              
               
               </td>
               <td>
@@ -51,68 +67,7 @@
                 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#excluirCliente">Excluir</button>
               </td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td><img src="img/menina2.jpg"></td>
-                <td>Bia</td>
-                <td>bia.sem@email.br</td>
-               
-               
-                <td>Agente de seguros</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editarFuncionario">Editar</button>
-                  <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#excluirCliente">Excluir</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td><img src="img/menina3.jpg"></td>
-                <td>Carla</td>
-                <td>carla.sem@email.br</td>
-              
-               
-                <td>Secretária</td>
-                <td>
-                  <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editarFuncionario">Editar</button>
-                  <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#excluirCliente">Excluir</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td><img src="img/menina5.png"></td>
-                <td>Debora</td>
-                <td>debora.sem@email.br</td>
-              
-                <td>Gerente de finanças</td>
-                <td>
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editarFuncionario">Editar</button>
-                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#excluirCliente">Excluir</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">5</th>
-                <td><img src="img/menina11.jpg."></td>
-                <td>Erica</td>
-                <td>erica.sem@email.br</td>
-              
-               
-                <td>Gerente de Gestão de Pessoa</td>
-                <td>
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editarFuncionario">Editar</button>
-                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#excluirCliente">Excluir</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">6</th>
-                <td><img src="img/menina10.jpg"></td>
-                <td>Fabia</td>
-                <td>fabia.sem@email.br</td>
-                <td>Técnica em TI</td>
-                <td>
-                    <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#editarFuncionario">Editar</button>
-                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#excluirCliente">Excluir</button>
-                </td>
-            </tr>
+            <?php endforeach; ?>  
         </tbody>
         </table>
       </div>
@@ -230,6 +185,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
 </body>
+
+
 <footer class="page-footer font-small blue">
 
   <div class="footer-copyright text-center py-3">© 2019 Copyright:

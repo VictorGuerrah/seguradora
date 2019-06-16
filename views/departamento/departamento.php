@@ -30,7 +30,7 @@
       </thead>
       <tbody>
 
-       <?php foreach($departamentos as $departamento) : ?>
+       <?php foreach($users as $user) : ?>
 
         <tr>
           <th scope="row">
@@ -70,19 +70,44 @@
 
           <form>
             <div class="form-group">
-              <label for="nomeCliente">Nome</label>
+              <label for="nomeCliente">
+              
+              <?php foreach($users as $user) : ?>
+
+        <tr>
+          <th scope="row">
+          
+          <?= $departamento->id; ?>
+          
+          </th>
+          <td>
+          
+          <?= $departamento->nome; ?>
+          
+          </td>
+        </tr>
+        
+        
+
+              
+              </label>
               <input type="name" class="form-control" id="nomeDep">
             </div>
+            
           </form>
-
+          <?php endforeach; ?>
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
           <button type="button" class="btn btn-primary">Salvar</button>
+          
         </div>
+        
       </div>
     </div>
   </div>
+  
 
 
   <div class="modal fade" id="editarDep" tabindex="-1" role="dialog" aria-hidden="true">
