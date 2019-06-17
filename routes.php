@@ -16,6 +16,7 @@ $router->get('clientes','controllers/cliente/ClienteController.php');
 $router->get('departamentos','controllers/departamento/showController.php');
 $router->post('addDepartamento','controllers/departamento/addController.php');
 $router->post('deleteDepartamento','controllers/departamento/deleteController.php');
+$router->post('updateDepartamento','controllers/departamento/updateController.php');
 
 //Funcionario
 $router->get('funcionarios','controllers/funcionario/showController.php');

@@ -30,9 +30,7 @@
         </tr>
       </thead>
       <tbody>
-
-       <?php foreach($departamentos as $departamento) : ?>
-
+      <?php foreach($departamentos as $departamento) : ?>
         <tr>
           <th scope="row">
           
@@ -46,17 +44,17 @@
           </td>
           <td>
             <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-              data-target="#editarDep">Editar</button>
+              data-target="#edit<?= $departamento->id; ?>">Editar</button>
             <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-              data-target="#excluirDep">Excluir</button>
+              data-target="#del<?= $departamento->id; ?>">Excluir</button>
           </td>
         </tr>
-        
         <?php endforeach; ?>
-
       </tbody>
     </table>
   </div>
+
+  <?php foreach($departamentos as $departamento) : ?>
 
   <div class="modal fade" id="addDepModal">
     <div class="modal-dialog" role="document">
@@ -81,7 +79,7 @@
   
 
 
-  <div class="modal fade" id="editarDep" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal fade" id="edit<?= $departamento->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -92,24 +90,24 @@
         </div>
         <div class="modal-body">
 
-          <form>
+          <form method="POST" action="/updateDepartamento">
             <div class="form-group">
-              <label for="nomeDep">Nome</label>
-              <input type="name" class="form-control" id="nomeCliente" placeholder="Nome do Departamento">
+              <label >Nome</label>
+              <input name='id' type='hidden' value='<?= $departamento->id ; ?>'>
+              <input name="nome" class="form-control" placeholder="<?= $departamento->nome ; ?>">
             </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="sunmit" class="btn btn-primary">Salvar</button>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Salvar</button>
-        </div>
+          
       </div>
     </div>
   </div>
 
 
 
-  <div class="modal fade" id="excluirDep" tabindex="-1" role="dialog">
+  <div class="modal fade" id="del<?= $departamento->id; ?>" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -120,7 +118,7 @@
         </div>
         <div class="modal-body">    
         <form method='POST' action='/deleteDepartamento'>
-              <input name="id" type="hidden" placeholder="<?= $departamento->id ; ?>">
+              <input name="id" type="hidden" value="<?= $departamento->id ; ?>">
               <br>
               <h5 class="centralizado">Deseja Realmente excluir esse Departamento?</h5>
               <br> <hr>
@@ -133,6 +131,7 @@
   </div>
 
 
+  <?php endforeach; ?>
 
   <!--JS-->
 
