@@ -14,7 +14,7 @@
 
 <body>
 
-<?php require 'assets/html/header.php'; ?>
+<?php require 'views/partial/header.php'; ?>
 
 
 

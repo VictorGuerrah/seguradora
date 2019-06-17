@@ -16,7 +16,7 @@
 
 <body>
 
-<?php require 'assets/html/header.php'; ?>
+<?php require 'views/partial/header.php'; ?>
 
 
     <div class="tabela-seguros">
@@ -154,6 +154,6 @@
 
 
 
-<?php require 'assets/html/footer.php'; ?>
+<?php require 'views/partial/footer.php'; ?>
 
 </html>

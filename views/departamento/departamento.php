@@ -14,7 +14,7 @@
 
 <body>
 
-<?php require 'assets/html/header.php'; ?>
+<?php require 'views/partial/header.php'; ?>
 
   <div class="tabela-clientes">
     <table class="table table-striped">
@@ -142,12 +142,6 @@
 
 
 
-<footer class="page-footer font-small blue card-tabela">
-
-  <div class="footer-copyright text-center py-3">© 2019 Copyright:
-    <a href="https://codejr.com.br/"> codejr.com.br</a>
-  </div>
-
-</footer>
+<?php require 'views/partial/footer.php'; ?>
 
 </html>

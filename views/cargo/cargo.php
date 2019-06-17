@@ -13,7 +13,7 @@
 
 <body>
     
-    <?php require 'assets/html/header.php'; ?>
+    <?php require 'views/partial/header.php'; ?>
 
     <div class="tabela-seguros">
         <table class="table table-striped">
@@ -200,6 +200,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
 </body>
 
-<?php require 'assets/html/footer.php'; ?>
+<?php require 'views/partial/footer.php'; ?>
 
 </html>
