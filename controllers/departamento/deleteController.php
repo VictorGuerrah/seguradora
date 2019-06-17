@@ -2,6 +2,6 @@
 
 $departamentos = $app['database']->selectAll('departamento');
 
-$app['database']->delete('departamento', [
-    'nome' => $_POST['nome']
-]);
+$app['database']->delete('departamento', $_POST['id']);
+
+header('Location: /departamentos');

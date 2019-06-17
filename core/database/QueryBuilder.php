@@ -54,16 +54,14 @@ class QueryBuilder{
         }
     }
 
-    public function delete($table, $parameters){
+    public function delete($table, $parameter){
 
         $sql = sprintf(
 
-        'delete from %s (%s) values (%s)',
+        'delete from %s where id=%s',
 
-        $table,
+        $table, $parameter
 
-        implode(', ', array_keys($parameters)),
-        ':' . implode(', :', array_keys($parameters))
         );
 
 
@@ -72,7 +70,7 @@ class QueryBuilder{
         $statement = $this->pdo->prepare($sql);
 
 
-        $statement->execute($parameters);
+        $statement->execute();
 
         }catch(Exception $e) {
 

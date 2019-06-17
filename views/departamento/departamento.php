@@ -117,21 +117,21 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <form method='POST' action='/deleteDepartamento'>
-              <label for="nomeCliente">Nome</label>
-              <input type="name" class="form-control" id="nomeCliente" placeholder="Nome do Departamento" readonly>
+        <div class="modal-body">    
+        <form method='POST' action='/deleteDepartamento'>
+              <input name="id" type="hidden" placeholder="<?= $departamento->id ; ?>">
+              <br>
               <h5 class="centralizado">Deseja Realmente excluir esse Departamento?</h5>
+              <br> <hr>
              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
              <button type="submit" class="btn btn-danger">Excluir</button>
           </form>
-          
-
         </div>
-        
       </div>
     </div>
   </div>
+
+
 
   <!--JS-->
 
