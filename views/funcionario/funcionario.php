@@ -87,37 +87,50 @@
                     </button>
                 </div>
                 <div class="modal-body">
-              <form action="/action_page.php">
+
+                
+              <form method='POST' action="/addFuncionarios">
                 <div class="form-group">
                     <label for="pwd">Imagem:</label>
-                    <img src="img/sombra.png">
+                    <input name="url_imagem">
                   </div>
                 <div class="form-group">
                   <label for="email">Nome :</label>
-                  <input type="nome" class="form-control" id="email" placeholder="Enter nome" name="nome">
+                  <input class="form-control" placeholder="Enter nome" name="nome">
                 </div>
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <input class="form-control" placeholder="Enter email" name="email">
                 </div>
                 <div class="form-group">
                   <label for="pwd">Password:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                  <input class="form-control" placeholder="Enter password" name="password">
                 </div>
                
-                <div class="form-group">
-                  <label for="pwd">Cargo</label>
-                  <input type="cargo" class="form-control" id="pwd" placeholder="Enter cargo" name="pwd">
-                </div>
+                <select name = "cargo_id">     
+                  <label for="pwd">Cargo:</label>
+                  <?php foreach($cargos as $cargo) : ?>
+
+                  <option value = "<?= $cargo->id;?>">
+                  <?= $cargo->nome; ?> 
+                  </option>
+                  
+                  <?php endforeach; ?> 
+
+                </select>
+
                 
+
+                
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Salvar</button>
+                </div>
     
               </form>
           </div>
           
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Salvar</button>
-            </div>
+            
         
           </div>
     </div>

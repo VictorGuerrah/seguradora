@@ -8,4 +8,6 @@
 			$funcionario->cargo_nome = $cargos[0]->nome;
 		}
 
+	$cargos=$app['database']->selectAll('cargo');
+
 require 'views/funcionario/funcionario.php';

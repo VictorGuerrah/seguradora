@@ -18,7 +18,8 @@ $router->post('addDepartamento','controllers/departamento/addController.php');
 $router->post('deleteDepartamento','controllers/departamento/deleteController.php');
 
 //Funcionario
-$router->get('funcionarios','controllers/funcionario/FuncionarioController.php');
+$router->get('funcionarios','controllers/funcionario/showController.php');
+$router->post('addFuncionarios','controllers/funcionario/addController.php');
 
 //Venda
 $router->get('vendas','controllers/vendas/vendasController.php');
