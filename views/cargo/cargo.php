@@ -115,7 +115,9 @@
                         <form method='POST' action='/updateCargo'>
                             <div class="form-group">
                                 <label for="nomeSeguro">Cargo</label>
-                                <input name="nome" class="form-control" placeholder="<?= $cargo->nome; ?> ">
+                                <input name='id' type='hidden' value='<?= $cargo->id; ?>'>
+                                <input name="nome"  placeholder="<?= $cargo->nome; ?> ">
+                                <input name="departamento_id" type="hidden" value="<?= $cargo->departamento_id; ?> ">
                             </div>
 
                             <select name="departamento_id">
