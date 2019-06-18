@@ -7,4 +7,4 @@ $app['database']->update('cargo', [
     'departamento_id' => $_POST['departamento_id']
 ], $_POST['id']);
 
-header('Location: /departamentos');
+

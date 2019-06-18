@@ -87,7 +87,7 @@ class QueryBuilder{
         
         foreach($parameters as $parameter=>$val){
        
-        $sql.=$parameter." = "."'".$val."'".",";
+        $sql.=$parameter." = "." '".$val."'".",";
         }
 
         $sql = substr(trim($sql), 0, -1);

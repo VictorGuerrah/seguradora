@@ -115,7 +115,7 @@
                         <form method='POST' action='/updateCargo'>
                             <div class="form-group">
                                 <label for="nomeSeguro">Cargo</label>
-                                <input type="name" class="form-control" placeholder="<?= $cargo->nome; ?> ">
+                                <input name="nome" class="form-control" placeholder="<?= $cargo->nome; ?> ">
                             </div>
 
                             <select name="departamento_id">
@@ -133,7 +133,7 @@
                             <hr>
 
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary">Salvar</button>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
                     </div>
                     </form>
                 </div>
