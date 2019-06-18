@@ -48,9 +48,9 @@
                     <td><?= $cargo->departamento_nome; ?> </td>
                     <td>
                         <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                            data-target="#editarCargo">Editar</button>
+                            data-target="#edit<?php $cargo->id; ?>">Editar</button>
                         <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                            data-target="#excluirCargo">Excluir</button>
+                            data-target="#del<?php $cargo->id; ?>">Excluir</button>
                     </td>
                 </tr>
                 
@@ -61,48 +61,53 @@
     </div>
 
 
-    <?php foreach($cargos as $cargo) { ?>
 
 
-
+    <!-- Modal -->
     <div class="modal fade" id="addCargo" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" >Adicionar Novo Cargo</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                  <h5 class="modal-title">Adicionar Novo Cargo</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
 
+                
+              <form method='POST' action="/addCargo">
+                <div class="form-group">
+                  <label>Cargo:</label>
+                  <input class="form-control" name="nome">
+                <div class="form-group">
+               
+                <select name = "departamento_id">     
+                  <label for="pwd">Cargo:</label>
+                  <?php foreach($departamentos as $departamento) : ?>
 
-                    <form action="processos.php" method='POST'>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Nome do cargo</label>
-                            <input type="text" name="nome" class="form-control" placeholder="# insira o cargo #">
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-outline-primary dropdown-toggle"          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Departamento
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Departamentos</a>
-                            </div>
-                        </div>
-                    
-                </div>
+                  <option value = "<?= $departamento->id;?>">
+                  <?= $departamento->nome; ?> 
+                  </option>
+                  
+                  <?php endforeach; ?> 
+
+                </select>
+                
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" name="salvar">Salvar</button>
-                </form>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
-            </div>
+              </form>
+          </div>
+          </div>
+         </div>
         </div>
     </div>
+</div>
 
 
-    <div class="modal fade" id="editarCargo" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="edit<?php $cargo->id; ?>">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -190,8 +195,6 @@
             </div>
         </div>
     </div>
-
-    <?php } ?>
 
     <!--JS-->
 

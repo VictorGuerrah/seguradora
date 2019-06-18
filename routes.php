@@ -4,7 +4,8 @@
 $router->get('','controllers/cargo/CargoController.php');
 
 //Cargo
-$router->get('cargos','controllers/cargo/CargoController.php');
+$router->get('cargos','controllers/cargo/showController.php');
+$router->post('addCargo','controllers/cargo/addController.php');
 
 //Tipo
 $router->get('tipos','controllers/tipo/TipoController.php');

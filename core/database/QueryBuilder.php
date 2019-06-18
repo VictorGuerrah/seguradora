@@ -42,7 +42,6 @@ class QueryBuilder{
         
 
         try{
-        var_dump($sql);
         $statement = $this->pdo->prepare($sql);
 
 
