@@ -43,8 +43,8 @@
                         </td>
                         <td><?= $cargo->departamento_nome; ?> </td>
                         <td>
-                            <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#edit<?php $cargo->id; ?>">Editar</button>
-                            <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#del<?php $cargo->id; ?>">Excluir</button>
+                            <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#edit<?= $cargo->id; ?>">Editar</button>
+                            <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#del<?= $cargo->id; ?>">Excluir</button>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -75,23 +75,19 @@
                             <div class="form-group">
                                 <label>Cargo:</label>
                                 <input class="form-control" name="nome">
-                                    <br>
-                                    <select name="departamento_id">
-                                        <label for="pwd">Cargo:</label>
+                                <br>
+                                <select name="departamento_id" class="form-control">
                                         <?php foreach ($departamentos as $departamento) : ?>
-
-                                            <option value="<?= $departamento->id; ?>">
-                                                <?= $departamento->nome; ?>
+                                            <option value="<?= $cargo->departamento_id; ?>">
+                                                <?= $departamento->nome; ?>  
                                             </option>
-
                                         <?php endforeach; ?>
+                                </select>
 
-                                    </select>
-
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                        <button type="submit" class="btn btn-primary">Salvar</button>
-                                    </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary">Salvar</button>
+                                </div>
                         </form>
                     </div>
                 </div>
@@ -101,7 +97,7 @@
         </div>
 
 
-        <div class="modal fade" id="edit<?php $cargo->id; ?>">
+        <div class="modal fade" id="edit<?= $cargo->id; ?>">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -116,7 +112,7 @@
                             <div class="form-group">
                                 <label for="nomeSeguro">Cargo</label>
                                 <input name='id' type='hidden' value='<?= $cargo->id; ?>'>
-                                <input name="nome"  placeholder="<?= $cargo->nome; ?> ">
+                                <input name="nome" placeholder="<?= $cargo->nome; ?> ">
                                 <input name="departamento_id" type="hidden" value="<?= $cargo->departamento_id; ?> ">
                             </div>
 
@@ -146,7 +142,7 @@
 
 
 
-        <div class="modal fade" id="del<?php $cargo->id; ?>" tabindex="-1" role="dialog">
+        <div class="modal fade" id="del<?= $cargo->id; ?>" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">

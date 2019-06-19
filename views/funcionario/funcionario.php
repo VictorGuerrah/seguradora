@@ -110,10 +110,9 @@
                 <select name = "cargo_id">     
                   <label for="pwd">Cargo:</label>
                   <?php foreach($cargos as $cargo) : ?>
-
-                  <option value = "<?= $cargo->id;?>">
-                  <?= $cargo->nome; ?> 
-                  </option>
+                    <option value = "<?= $cargo->id;?>">
+                      <?= $cargo->nome; ?> 
+                    </option>
                   
                   <?php endforeach; ?> 
 
