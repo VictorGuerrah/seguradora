@@ -43,7 +43,7 @@
                   class="imagem-logo">
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Sair</a>
+                <a class="dropdown-item" href="/login">Sair</a>
               </div>
             </li>
           </nav>

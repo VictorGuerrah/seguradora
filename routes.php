@@ -1,6 +1,7 @@
 <?php
 
 // Inicial
+$router->get('login', 'views/login/login.php');
 $router->get('', 'controllers/cargo/showController.php');
 
 //Cargo
