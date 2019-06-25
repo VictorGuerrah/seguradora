@@ -94,7 +94,7 @@
                 <input name="nome" class="form-control" placeholder="<?= $departamento->nome; ?>">
               </div>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="sunmit" class="btn btn-primary">Salvar</button>
+              <button type="submit" class="btn btn-primary">Salvar</button>
             </form>
           </div>
 

@@ -77,11 +77,11 @@
                                 <input class="form-control" name="nome">
                                 <br>
                                 <select name="departamento_id" class="form-control">
-                                        <?php foreach ($departamentos as $departamento) : ?>
-                                            <option value="<?= $cargo->departamento_id; ?>">
-                                                <?= $departamento->nome; ?>  
-                                            </option>
-                                        <?php endforeach; ?>
+                                    <?php foreach ($departamentos as $departamento) : ?>
+                                        <option value="<?= $cargo->departamento_id; ?>">
+                                            <?= $departamento->nome; ?>
+                                        </option>
+                                    <?php endforeach; ?>
                                 </select>
 
                                 <div class="modal-footer">
@@ -153,7 +153,7 @@
                     </div>
                     <div class="modal-body">
                         <form method='POST' action='deleteCargo'>
-                            <h5 class="centralizado">Deseja Realmente excluir o cargo?</h5>
+                            <h5 class="centralizado">Deseja realmente excluir o cargo?</h5>
                             <br>
                             <hr>
                             <input type="hidden" name="id" value="<?= $cargo->id; ?>">
@@ -167,28 +167,6 @@
             </div>
         </div>
 
-        <div class="modal fade" id="exibirCargo" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Detalhes</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                        <p><b>Cargo:</b> <?= $cargo->nome ?></p>
-                        <hr>
-                        <p><b>Departamento:</b><?= $cargo->departamento_nome; ?> </p>
-                        <hr>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Sair</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
     <?php endforeach; ?>
 

@@ -11,7 +11,10 @@ $router->post('deleteCargo', 'controllers/cargo/deleteController.php');
 $router->post('updateCargo', 'controllers/cargo/updateController.php');
 
 //Tipo
-$router->get('tipos', 'controllers/tipo/TipoController.php');
+$router->get('tipos', 'controllers/tipo/showController.php');
+$router->post('addTipo', 'controllers/tipo/addController.php');
+$router->post('deleteTipo', 'controllers/tipo/deleteController.php');
+$router->post('updateTipo', 'controllers/tipo/updateController.php');
 
 //Cliente
 $router->get('clientes', 'controllers/cliente/ClienteController.php');
