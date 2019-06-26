@@ -8,12 +8,12 @@
     <title>CRUD Cargo</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.css">
     <link href="assets/css/cargo.css" rel="stylesheet" type="text/css">
-  
+
 </head>
 
 <body>
-    
-    <?php require 'assets/html/header.php'; ?>
+
+    <?php require 'views/partial/header.php'; ?>
 
     <div class="tabela-seguros">
         <table class="table table-striped">
@@ -23,175 +23,152 @@
                     <th scope="col" class="th-lg">Nome</th>
                     <th scope="col" class="th-lg">Departamento</th>
                     <th scope="col" class="fix">
-                        <button class="btn btn-primary botaoAdd" data-toggle="modal" data-target="#addCargo"
-                            type="submit">Adicionar</button>
+                        <button class="btn btn-primary botaoAdd" data-toggle="modal" data-target="#addCargo" type="submit">Adicionar</button>
                     </th>
                 </tr>
             </thead>
             <tbody>
-                
-               <?php  foreach($cargos as $cargo) : ?>
-               
-                
-                <tr>
-                    <th scope="row"> 
-                    
-                    <?= $cargo->id; ?> 
-                    
-                    </th>
-                    
-                    <td>
+                <?php foreach ($cargos as $cargo) : ?>
+                    <tr>
+                        <th scope="row">
 
-                    <?= $cargo->nome; ?> 
-                    
-                    </td>
-                    <td><?= $cargo->departamento_nome; ?> </td>
-                    <td>
-                        <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                            data-target="#editarCargo">Editar</button>
-                        <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                            data-target="#excluirCargo">Excluir</button>
-                    </td>
-                </tr>
-                
+                            <?= $cargo->id; ?>
+
+                        </th>
+
+                        <td>
+
+                            <?= $cargo->nome; ?>
+
+                        </td>
+                        <td><?= $cargo->departamento_nome; ?> </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#edit<?= $cargo->id; ?>">Editar</button>
+                            <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#del<?= $cargo->id; ?>">Excluir</button>
+                        </td>
+                    </tr>
                 <?php endforeach; ?>
-                
             </tbody>
         </table>
     </div>
 
 
-    <?php foreach($cargos as $cargo) { ?>
 
 
+    <!-- Modal -->
 
-    <div class="modal fade" id="addCargo" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" >Adicionar Novo Cargo</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
+    <?php foreach ($cargos as $cargo) : ?>
+
+        <div class="modal fade" id="addCargo" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Adicionar Novo Cargo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
 
 
-                    <form action="processos.php" method='POST'>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Nome do cargo</label>
-                            <input type="text" name="nome" class="form-control" placeholder="# insira o cargo #">
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-outline-primary dropdown-toggle"          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Departamento
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Departamentos</a>
-                            </div>
-                        </div>
-                    
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" name="salvar">Salvar</button>
-                </form>
+                        <form method='POST' action="/addCargo">
+                            <div class="form-group">
+                                <label>Cargo:</label>
+                                <input class="form-control" name="nome">
+                                <br>
+                                <select name="departamento_id" class="form-control">
+                                    <?php foreach ($departamentos as $departamento) : ?>
+                                        <option value="<?= $cargo->departamento_id; ?>">
+                                            <?= $departamento->nome; ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                </select>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-primary">Salvar</button>
+                                </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        </div>
+        </div>
 
 
-    <div class="modal fade" id="editarCargo" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Editar Cargo</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
+        <div class="modal fade" id="edit<?= $cargo->id; ?>">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Editar Cargo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
 
-                    <form>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Cargo</label>
-                            <input type="name" class="form-control"placeholder="<?= $cargo->nome; ?> ">
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-outline-primary dropdown-toggle"          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Departamento
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Departamentos</a>
+                        <form method='POST' action='/updateCargo'>
+                            <div class="form-group">
+                                <label for="nomeSeguro">Cargo</label>
+                                <input name='id' type='hidden' value='<?= $cargo->id; ?>'>
+                                <input name="nome" placeholder="<?= $cargo->nome; ?> ">
+                                <input name="departamento_id" type="hidden" value="<?= $cargo->departamento_id; ?> ">
                             </div>
-                        </div>
+
+                            <select name="departamento_id">
+                                <?php foreach ($departamentos as $departamento) : ?>
+
+                                    <option value="<?= $departamento->id; ?>">
+                                        <?= $departamento->nome; ?>
+                                    </option>
+
+                                <?php endforeach; ?>
+
+                            </select>
+
+                            <br>
+                            <hr>
+
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Salvar</button>
+            </div>
+        </div>
+        </div>
+        </div>
+
+
+
+        <div class="modal fade" id="del<?= $cargo->id; ?>" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modalEcluir">Excluir Cargo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method='POST' action='deleteCargo'>
+                            <h5 class="centralizado">Deseja realmente excluir o cargo?</h5>
+                            <br>
+                            <hr>
+                            <input type="hidden" name="id" value="<?= $cargo->id; ?>">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
+
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
 
 
-
-    <div class="modal fade" id="excluirCargo" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modalEcluir">Excluir Cargo</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Cargo</label>
-                            <input type="name" class="form-control" placeholder="<?= $cargo->nome; ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Departamento</label>
-                            <input type="name" class="form-control" placeholder="<?= $cargo->departamento_nome; ?>" readonly>
-                        </div>
-                    </form>
-                    <h5 class="centralizado">Deseja Realmente excluir o cargo?</h5>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Excluir</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="exibirCargo" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Detalhes</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <p><b>Cargo:</b> <?= $cargo->nome ?></p>
-                    <hr>
-                    <p><b>Departamento:</b><?= $cargo->departamento_nome; ?> </p>
-                    <hr>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Sair</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <?php } ?>
+    <?php endforeach; ?>
 
     <!--JS-->
 
@@ -200,6 +177,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
 </body>
 
-<?php require 'assets/html/footer.php'; ?>
+<?php require 'views/partial/footer.php'; ?>
 
 </html>

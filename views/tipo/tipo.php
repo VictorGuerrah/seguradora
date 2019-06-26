@@ -16,7 +16,7 @@
 
 <body>
 
-<?php require 'assets/html/header.php'; ?>
+    <?php require 'views/partial/header.php'; ?>
 
 
     <div class="tabela-seguros">
@@ -25,38 +25,35 @@
                 <tr>
                     <th scope="col" class="th-lg"> </th>
                     <th scope="col" class="th-lg">Tipo</th>
-                    
+
                     <th scope="col" class="fix">
-                        <button class="btn btn-primary botaoAdd" data-toggle="modal" data-target="#addTipo"
-                            type="submit">Adicionar</button>
+                        <button class="btn btn-primary botaoAdd" data-toggle="modal" data-target="#addTipo" type="submit">Adicionar</button>
                     </th>
                 </tr>
             </thead>
             <tbody>
 
-                <?php foreach($tipos as $tipo) : ?>
+                <?php foreach ($tipos as $tipo) : ?>
 
-                <tr>
-                    <th scope="row">
+                    <tr>
+                        <th scope="row">
 
-                    <?= $tipo->id; ?>
+                            <?= $tipo->id; ?>
 
-                    </th>
+                        </th>
 
-                    <td>
+                        <td>
 
-                    <?= $tipo->nome; ?>
-                    
-                    </td>
-                   
-                    <td>
-                        <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                            data-target="#editarSeguro">Editar</button>
-                        <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                            data-target="#excluirSeguro">Excluir</button>
-                    </td>
-                </tr>
-                
+                            <?= $tipo->nome; ?>
+
+                        </td>
+
+                        <td>
+                            <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#edit<?= $tipo->id; ?>">Editar</button>
+                            <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#del<?= $tipo->id; ?>">Excluir</button>
+                        </td>
+                    </tr>
+
 
                 <?php endforeach; ?>
 
@@ -65,8 +62,9 @@
     </div>
 
 
+    <!-- Modal -->
 
-
+    <?php foreach ($tipos as $tipo) : ?>
 
 
     <div class="modal fade" id="addTipo" tabindex="-1" role="dialog" aria-hidden="true">
@@ -80,43 +78,44 @@
                 </div>
                 <div class="modal-body">
 
-                <form action="processos.php" method='POST'>
+                    <form action="addTipo" method='POST'>
                         <div class="form-group">
-                            <label for="nomeSeguro">Tipo</label>
-                            <input type="name" class="form-control" id="nomeSeguro" placeholder="Tipo #">
+                            <label>
+                                <h5>Tipo</h5>
+                            </label>
+                            <input class="form-control" name="nome">
                         </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Salvar</button>
-                </form>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
 
-    <div class="modal fade" id="editarSeguro" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="edit<?= $tipo->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editarSeguroModal">Editar Tipo</h5>
+                    <h5 class="modal-title">Editar Tipo</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-
-                    <form>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Tipo</label>
-                            <input type="name" class="form-control" id="nomeSeguro" placeholder="<?= $tipo->nome; ?>">
-                        </div>
-                    </form>
+                <form method='POST' action='/updateTipo'>
+                            <div class="form-group">
+                                <label for="nomeSeguro">Tipo</label>
+                                <input name='id' type='hidden' value='<?= $tipo->id; ?>'>
+                                <input name="nome" placeholder="<?= $tipo->nome; ?> ">
+                            </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Salvar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
                 </div>
             </div>
         </div>
@@ -124,26 +123,32 @@
 
 
 
-    <div class="modal fade" id="excluirSeguro" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modalEcluir" id="excluirModal">Excluir Tipo</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <h5 class="centralizado">Deseja Realmente excluir o tipo de seguro?</h5>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Excluir</button>
+    <div class="modal fade" id="del<?= $tipo->id; ?>" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modalEcluir">Excluir Tipo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form method='POST' action='deleteTipo'>
+                            <h5 class="centralizado">Deseja realmente excluir o tipo de seguro?</h5>
+                            <br>
+                            <hr>
+                            <input type="hidden" name="id" value="<?= $tipo->id; ?>">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
+
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
 
+    <?php endforeach; ?>
 
     <!--JS-->
 
@@ -154,6 +159,6 @@
 
 
 
-<?php require 'assets/html/footer.php'; ?>
+<?php require 'views/partial/footer.php'; ?>
 
 </html>

@@ -9,7 +9,7 @@
 <body>
 
   
-<?php require 'assets/html/header.php'; ?>
+<?php require 'views/partial/header.php'; ?>
 
   <div class="tabela-seguros">
         <table class="table table-striped">
@@ -110,10 +110,9 @@
                 <select name = "cargo_id">     
                   <label for="pwd">Cargo:</label>
                   <?php foreach($cargos as $cargo) : ?>
-
-                  <option value = "<?= $cargo->id;?>">
-                  <?= $cargo->nome; ?> 
-                  </option>
+                    <option value = "<?= $cargo->id;?>">
+                      <?= $cargo->nome; ?> 
+                    </option>
                   
                   <?php endforeach; ?> 
 
@@ -144,7 +143,8 @@
 
 </div>
 
-<div class="modal fade" id="editarFuncionario" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="modal fade" id="editarFuncionario<?=$funcionario->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -160,21 +160,26 @@
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaacinxhnYcBnhULvPCpYB1rgJfcaj1MjLAAXagZi2qkSafv42">
                   </div>
                 <div class="form-group">
-                  <label for="email">Nome :</label>
-                  <input type="nome" class="form-control" id="email" placeholder="Enter nome" name="nome">
+                  <label for="nome">Nome :</label>
+                  <input name='id' type='hidden' value='<?= $funcionario->id ; ?>'>
+                  <input name="nome" class="form-control" placeholder="<?= $departamento->nome ; ?>">
+
                 </div>
                 <div class="form-group">
                   <label for="email">Email:</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                  <input name='id' type='hidden' value='<?= $funcionario->id ; ?>'>
+                  <input name="email" class="form-control" placeholder="<?= $funcionario->email ; ?>">
                 </div>
                 <div class="form-group">
                   <label for="pwd">Password:</label>
-                  <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+                  <input name='id' type='hidden' value='<?= $funcionario->id ; ?>'>
+                  <input name="password" class="form-control" placeholder="<?= $funcionario->password ; ?>">
                 </div>
                
                 <div class="form-group">
                   <label for="pwd">Cargo</label>
-                  <input type="cargo" class="form-control" id="pwd" placeholder="Enter cargo" name="pwd">
+                  <input name='id' type='hidden' value='<?= $funcionario->id ; ?>'>
+                  <input name="cargo" class="form-control" placeholder="<?= $funcionario->cargo ; ?>">
                 </div>
                 
                
@@ -187,7 +192,9 @@
     </div>
   </div>
 
-  <div class="modal fade" id="excluirSeguro" tabindex="-1" role="dialog">
+
+  
+  <div class="modal fade" id="excluirSeguro<?= $funcionario->id; ?>" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -197,11 +204,16 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <h5 class="centralizado">Deseja Realmente excluir o funcionário?</h5>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Excluir</button>
+                  <form method='POST' action='/deleteFuncionario'>
+                    <input name="id" type="hidden" value="<?= $funcionario->id; ?>">
+                    <br>
+                      <h5 class="centralizado">Deseja Realmente excluir esse Departamento?</h5>
+                    <br>
+                    <hr>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
+
                 </div>
             </div>
         </div>

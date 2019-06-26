@@ -42,7 +42,6 @@ class QueryBuilder{
         
 
         try{
-        var_dump($sql);
         $statement = $this->pdo->prepare($sql);
 
 
@@ -80,23 +79,23 @@ class QueryBuilder{
 
     public function update($table, $parameters, $id){
 
-        $sql = sprintf(
-
-            'update %s set ',
-                $table
-        );
+        $x = 1;
+        $set = '';
         
         foreach($parameters as $parameter=>$val){
        
-        $sql.=$parameter." = "."'".$val."'".",";
+        $set.= "{$parameter} = \"{$val}\"";
+        if($x < count($parameters)) {
+            $set .= ',';
+            }
+            $x++;
         }
 
-        $sql = substr(trim($sql), 0, -1);
-        
-        $sql.=" where id=".$id;
+        $sql = "update {$table} set {$set} where id = {$id}";
         
             try{
-                
+            
+            var_dump($id);
             var_dump($sql);
 
             $statement = $this->pdo->prepare($sql);
