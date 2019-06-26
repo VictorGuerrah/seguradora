@@ -61,9 +61,8 @@
               
               </td>
               <td>
-                <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#editarFuncionario">Editar</button>
-                <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                            data-target="#excluirSeguro">Excluir</button>
+                <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#edit<?=$funcionario->id; ?>">Editar</button>
+                <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#excluirSeguro<?= $funcionario->id; ?>">Excluir</button>
               </td>
             </tr>
             <?php endforeach; ?>  
@@ -72,12 +71,7 @@
       </div>
 
 
-
-    
-      
-       
-        <!-- Modal -->
-        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -134,6 +128,14 @@
           </div>
     </div>
       
+
+    
+      
+       
+        <!-- Modal -->
+        <?php foreach ($funcionarios as $funcionario) : ?>
+
+
   </div>
 
   
@@ -144,53 +146,63 @@
 </div>
 
 
-<div class="modal fade" id="editarFuncionario<?=$funcionario->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
+<div class="modal fade" id="edit<?=$funcionario->id; ?>" tabindex="-1" role="dialog" aria-hidden="true" >
+  <div class="modal-dialog" role="document">
+     <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="addClienteModalTitulo">Editar Funcionário</h5>
+          <h5 class="modal-title"  id="editarFuncModal">Editar Funcionário</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-              <form action="/action_page.php">
+
+            <form method='POST' action='/updateFuncionarios'>
                 <div class="form-group">
                     <label for="pwd">Imagem:</label>
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaacinxhnYcBnhULvPCpYB1rgJfcaj1MjLAAXagZi2qkSafv42">
-                  </div>
+                </div>
                 <div class="form-group">
                   <label for="nome">Nome :</label>
                   <input name='id' type='hidden' value='<?= $funcionario->id ; ?>'>
-                  <input name="nome" class="form-control" placeholder="<?= $departamento->nome ; ?>">
+                  <input name="nome" class="form-control" value="<?= $funcionario->nome ; ?>">
 
                 </div>
                 <div class="form-group">
                   <label for="email">Email:</label>
                   <input name='id' type='hidden' value='<?= $funcionario->id ; ?>'>
-                  <input name="email" class="form-control" placeholder="<?= $funcionario->email ; ?>">
+                  <input name="email" class="form-control" value="<?= $funcionario->email ; ?>">
                 </div>
                 <div class="form-group">
                   <label for="pwd">Password:</label>
                   <input name='id' type='hidden' value='<?= $funcionario->id ; ?>'>
-                  <input name="password" class="form-control" placeholder="<?= $funcionario->password ; ?>">
+                  <input name="password" class="form-control" value="<?= $funcionario->password ; ?>">
                 </div>
                
                 <div class="form-group">
-                  <label for="pwd">Cargo</label>
-                  <input name='id' type='hidden' value='<?= $funcionario->id ; ?>'>
-                  <input name="cargo" class="form-control" placeholder="<?= $funcionario->cargo ; ?>">
+                  <label>Cargo:</label>
+                  <select name="cargo_id">
+                                <?php foreach ($cargos as $cargo) : ?>
+
+                                    <option value="<?= $cargo->id; ?>">
+                                        <?= $cargo->nome; ?>
+                                    </option>
+
+                                <?php endforeach; ?>
+
+                  </select>
                 </div>
                 
                
-              </form>
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-primary">Salvar</button>
+              <button type="submit" class="btn btn-primary">Salvar</button>
           </div>
+            </form>
     </div>
   </div>
+</div>
 
 
   
@@ -204,7 +216,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                  <form method='POST' action='/deleteFuncionario'>
+                  <form method='POST' action='/deleteFuncionarios'>
                     <input name="id" type="hidden" value="<?= $funcionario->id; ?>">
                     <br>
                       <h5 class="centralizado">Deseja Realmente excluir esse Departamento?</h5>
@@ -222,17 +234,14 @@
 
 
 </div>
+
+<?php endforeach; ?>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
 </body>
 
+<?php require 'views/partial/footer.php'; ?>
 
-<footer class="page-footer font-small blue">
-
-  <div class="footer-copyright text-center py-3">© 2019 Copyright:
-    <a href="https://codejr.com.br/"> codejr.com.br</a>
-  </div>
-
-</footer>
 </html>

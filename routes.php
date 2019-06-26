@@ -28,6 +28,8 @@ $router->post('updateDepartamento', 'controllers/departamento/updateController.p
 //Funcionario
 $router->get('funcionarios', 'controllers/funcionario/showController.php');
 $router->post('addFuncionarios', 'controllers/funcionario/addController.php');
+$router->post('deleteFuncionarios', 'controllers/funcionario/deleteController.php');
+$router->post('updateFuncionarios', 'controllers/funcionario/updateController.php');
 
 //Venda
 $router->get('vendas', 'controllers/vendas/vendasController.php');
