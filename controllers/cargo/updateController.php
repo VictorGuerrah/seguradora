@@ -1,6 +1,6 @@
 <?php
 
-$departamentos = $app['database']->selectAll('cargo');
+$cargos = $app['database']->selectAll('cargo');
 
 $app['database']->update('cargo', [
     'nome' => $_POST['nome'],

@@ -68,7 +68,6 @@ class QueryBuilder{
 
         $statement = $this->pdo->prepare($sql);
 
-        
         $statement->execute();
 
         }catch(Exception $e) {

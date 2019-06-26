@@ -133,7 +133,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form method='POST' action='deleteTipo'>
+                        <form method='POST' action='/deleteTipo'>
                             <h5 class="centralizado">Deseja realmente excluir o tipo de seguro?</h5>
                             <br>
                             <hr>

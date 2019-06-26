@@ -101,7 +101,9 @@
                   <input class="form-control" placeholder="Enter password" name="password">
                 </div>
                
-                <select name = "cargo_id">     
+                <div class="form-group">
+                  <label>Cargo:</label> 
+                <select name = "cargo_id" class="form-control">     
                   <label for="pwd">Cargo:</label>
                   <?php foreach($cargos as $cargo) : ?>
                     <option value = "<?= $cargo->id;?>">
@@ -111,6 +113,7 @@
                   <?php endforeach; ?> 
 
                 </select>
+                </div>
 
                 
 
@@ -181,7 +184,7 @@
                
                 <div class="form-group">
                   <label>Cargo:</label>
-                  <select name="cargo_id">
+                  <select name="cargo_id" class="form-control">
                                 <?php foreach ($cargos as $cargo) : ?>
 
                                     <option value="<?= $cargo->id; ?>">

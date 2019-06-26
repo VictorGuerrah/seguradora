@@ -78,7 +78,7 @@
                                 <br>
                                 <select name="departamento_id" class="form-control">
                                     <?php foreach ($departamentos as $departamento) : ?>
-                                        <option value="<?= $cargo->departamento_id; ?>">
+                                        <option value="<?= $departamento->id; ?>">
                                             <?= $departamento->nome; ?>
                                         </option>
                                     <?php endforeach; ?>
