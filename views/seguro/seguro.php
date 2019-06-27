@@ -28,8 +28,8 @@
                     <th scope="col">Tipo</th>
                     <th scope="col">Preço</th>
                     <th scope="col" class="fix">
-                        <button class="btn btn-primary botaoAdd" data-toggle="modal" data-target="#addSeguroModal"
-                            type="submit">Adicionar</button>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal" type="submit">Adicionar</button>
+         
                     </th>
                 </tr>
             </thead>
@@ -59,6 +59,9 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
+
+                
+
                     <h5 class="modal-title" id="addSeguroModalTitulo">Adicionar Novo Seguro</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -80,16 +83,17 @@
                             <label for="descricao">Descrição</label>
                             <input class="form-control" placeholder="Enter descricao" name="descricao">
                         </div>
+
                         <div class="form-group">
                             <label>Tipo:</label> 
                                 <select name = "tipo_seguro_id" class="form-control">     
-                                <label for="pwd">Tipo:</label>
-                                    <?php foreach($tipos as $tipo) : ?>
+                            <label for="pwd">Tipo:</label>
+                            <?php foreach($tipos as $tipos) : ?>
                                 <option value = "<?= $tipo->id;?>">
                                     <?= $tipo->nome; ?> 
                                 </option>
                   
-                                    <?php endforeach; ?> 
+                            <?php endforeach; ?> 
 
                                 </select>
                         </div>

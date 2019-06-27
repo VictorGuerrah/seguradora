@@ -7,7 +7,9 @@
 		foreach($seguros as $seguro)
 		{
 			$tipos = $app['database']->select('tipo_seguro', "id =".$seguro->tipo_seguro_id );
-			$seguro->tipo_nome = $tipos[0]->nome;
+			$seguro->tipo_seguro_nome = $tipos[0]->nome;
 		}
+		$tipos=$app['database']->selectAll('tipo');
 
-     	require 'views/seguro/seguro.php';
+		 require 'views/seguro/seguro.php';
+		 

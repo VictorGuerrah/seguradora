@@ -39,7 +39,7 @@ $router->post('updateFuncionarios', 'controllers/funcionario/updateController.ph
 $router->get('vendas', 'controllers/vendas/vendasController.php');
 
 //Seguro
-$router->get('seguros', 'controllers/seguro/seguroController.php');
+$router->get('seguros', 'controllers/seguro/showController.php');
 $router->post('addSeguro', 'controllers/seguro/addController.php');
 $router->post('deleteSeguro', 'controllers/seguro/deleteController.php');
 $router->post('updateSeguro', 'controllers/seguro/updateController.php');
