@@ -250,7 +250,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                  <?php foreach($clientes as $cliente) : ?>
+                 
                     <p><b>Id: </b> <?= $cliente->id ?> </p>
                     <hr>
                     <p><b>Nome: </b> <?= $cliente->nome ?> </p>
@@ -267,7 +267,7 @@
                     <hr>
                     <p><b>Número: </b> <?= $cliente->numero ?></p>
                     <hr>
-                    <?php endforeach; ?>
+                   
                 </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Sair</button>
