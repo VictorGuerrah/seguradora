@@ -22,8 +22,7 @@
             <th scope="col">Email</th>
             <th scope="col">Cargo</th>
             <th scope="col">
-              <button class="btn btn-primary" data-toggle="modal" data-target="#modal"
-                type="submit">Adicionar</button>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#modal" type="submit">Adicionar</button>
             </th>
           </tr>
         </thead>
@@ -89,7 +88,7 @@
                     <input name="url_imagem">
                   </div>
                 <div class="form-group">
-                  <label for="email">Nome :</label>
+                  <label for="nome">Nome :</label>
                   <input class="form-control" placeholder="Enter nome" name="nome">
                 </div>
                 <div class="form-group">
@@ -222,7 +221,7 @@
                   <form method='POST' action='/deleteFuncionarios'>
                     <input name="id" type="hidden" value="<?= $funcionario->id; ?>">
                     <br>
-                      <h5 class="centralizado">Deseja Realmente excluir esse Departamento?</h5>
+                      <h5 class="centralizado">Deseja Realmente excluir esse Funcionario?</h5>
                     <br>
                     <hr>
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

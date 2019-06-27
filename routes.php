@@ -17,7 +17,11 @@ $router->post('deleteTipo', 'controllers/tipo/deleteController.php');
 $router->post('updateTipo', 'controllers/tipo/updateController.php');
 
 //Cliente
-$router->get('clientes', 'controllers/cliente/ClienteController.php');
+$router->get('clientes', 'controllers/cliente/showController.php');
+$router->post('addCliente', 'controllers/cliente/addController.php');
+$router->post('deleteCliente', 'controllers/cliente/deleteController.php');
+$router->post('updateCliente', 'controllers/cliente/updateController.php');
+
 
 //Departamento
 $router->get('departamentos', 'controllers/departamento/showController.php');

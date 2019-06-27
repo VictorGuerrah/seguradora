@@ -27,8 +27,7 @@
             <th scope="col" class="centralizado">E-mail</th>
             <th scope="col" class="centralizado">CPF</th>
             <th scope="col" class="fix">
-              <button class="btn btn-primary btn-sm botaoAdd" data-toggle="modal" data-target="#addClienteModal"
-                type="submit">Adicionar</button>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#modal" type="submit">Adicionar</button>
             </th>
           </tr>
         </thead>
@@ -60,10 +59,8 @@
 
             <td>
             <button type="button" class="btn btn-outline-success botao" data-toggle="modal" data-target="#exibirCliente">Exibir</button>
-              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                data-target="#editarCliente">Editar</button>
-              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                data-target="#excluirCliente">Excluir</button>
+              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#edit<?=$cliente->id; ?>">Editar</button>
+              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#excluir<?= $cliente->id; ?>">Excluir</button>
             </td>
           </tr>
           
@@ -77,7 +74,7 @@
 
 
 
-    <div class="modal fade" id="addClienteModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -88,57 +85,59 @@
           </div>
           <div class="modal-body">
 
-            <form>
+          <form method='POST' action="/addCliente">
               <div class="form-group">
-                <label for="nomeCliente">Nome</label>
-                <input type="name" class="form-control" id="nomeCliente">
-              </div>
-              <div class="form-group">
-                <label for="emailCliente">E-mail</label>
-                <input type="email" class="form-control" id="emailCliente">
-              </div>
-              <div class="form-group">
-                <label for="cpfCliente">CPF</label>
-                <input type="" class="form-control" id="cpfCliente">
+                  <label for="name">Nome :</label>
+                  <input class="form-control" placeholder="Enter nome" name="nome">
               </div>
 
               <div class="form-group">
-                <div class="row">
-                  <div class="col-md-5">
-                    <label for="ruaCliente">Rua</label>
-                    <input type="" class="form-control" id="ruaCliente">
-                  </div>
-                  <div class="col-md-5">
-                    <label for="bairroCliente">Bairro</label>
-                    <input type="" class="form-control" id="bairroCliente">
-                  </div>
-                  <div class="col-md-2">
-                    <label for="numeroCliente">Número</label>
-                    <input type="" class="form-control" id="numeroCliente">
-                  </div>
+                  <label for="email">Email :</label>
+                  <input class="form-control" placeholder="Enter email" name="email">
+              </div>
 
+              <div class="form-group">
+                  <label for="email">Bairro :</label>
+                  <input class="form-control" placeholder="Enter bairro" name="bairro">
                 </div>
+                
+              <div class="form-group">
+                  <label for="email">Cidade :</label>
+                  <input class="form-control" placeholder="Enter cidade" name="cidade">
               </div>
 
               <div class="form-group">
-                <label for="cidadeCliente">Cidade</label>
-                <input type="" class="form-control" id="cidadeCliente">
+                  <label for="email">CPF :</label>
+                  <input class="form-control" placeholder="Enter CPF" name="cpf">
               </div>
-            </form>
+            
+              <div class="form-group">
+                  <label for="email">Numero :</label>
+                  <input class="form-control" placeholder="Enter numero" name="numero">
+              </div>
+
+              <div class="form-group">
+                  <label for="email">Rua :</label>
+                  <input class="form-control" placeholder="Enter rua" name="rua">
+              </div>
 
 
 
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Salvar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
           </div>
+
+          </form>
+
         </div>
       </div>
     </div>
 
+    <?php foreach ($clientes as $cliente) : ?>
 
-    <div class="modal fade" id="editarCliente" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="edit<?=$cliente->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -149,58 +148,71 @@
           </div>
           <div class="modal-body">
 
-            <form>
+          <form method='POST' action='/updateCliente'>
+
               <div class="form-group">
-                <label for="nomeCliente">Nome</label>
-                <input type="name" class="form-control" id="nomeCliente" placeholder="<?= $cliente->nome ?>">
-              </div>
-              <div class="form-group">
-                <label for="emailCliente">E-mail</label>
-                <input type="email" class="form-control" id="emailCliente" placeholder="<?= $cliente->email ?>">
-              </div>
-              <div class="form-group">
-                <label for="cpfCliente">CPF</label>
-                <input type="" class="form-control" id="cpfCliente" placeholder="<?= $cliente->cpf ?>">
+                  <label for="nome">Nome :</label>
+                  <input name='id' type='hidden' value='<?= $cliente->id ; ?>'>
+                  <input name="nome" class="form-control" value="<?= $cliente->nome ; ?>">
               </div>
 
               <div class="form-group">
-                <div class="row">
-                  <div class="col-md-12">
-                    <label for="ruaCliente">Rua</label>
-                    <input type="" class="form-control" id="ruaCliente" placeholder="<?= $cliente->rua ?>">
-                  </div>
-                  <div class="col-md-5">
-                    <label for="bairroCliente">Bairro</label>
-                    <input type="" class="form-control" id="bairroCliente" placeholder="<?= $cliente->bairro ?>">
-                  </div>
-                  <div class="col-md-3">
-                    <label for="numeroCliente">Número</label>
-                    <input type="" class="form-control" id="numeroCliente" placeholder="<?= $cliente->numero ?>">
-                  </div>
-
-                </div>
+                  <label for="email">Email :</label>
+                  <input name='id' type='hidden' value='<?= $cliente->id ; ?>'>
+                  <input name="email" class="form-control" value="<?= $cliente->email ; ?>">
+              </div>
+              
+              <div class="form-group">
+                  <label for="cpf">CPF :</label>
+                  <input name='id' type='hidden' value='<?= $cliente->id ; ?>'>
+                  <input name="cpf" class="form-control" value="<?= $cliente->cpf ; ?>">
               </div>
 
               <div class="form-group">
-                <label for="cidadeCliente">Cidade</label>
-                <input type="" class="form-control" id="cidadeCliente" placeholder="<?= $cliente->cidade ?>">
+                  <label for="rua">Rua :</label>
+                  <input name='id' type='hidden' value='<?= $cliente->id ; ?>'>
+                  <input name="rua" class="form-control" value="<?= $cliente->rua ; ?>">
               </div>
-            </form>
+
+              <div class="form-group">
+                  <label for="bairro">Bairro :</label>
+                  <input name='id' type='hidden' value='<?= $cliente->id ; ?>'>
+                  <input name="bairro" class="form-control" value="<?= $cliente->bairro ; ?>">
+              </div>
+                 
+              <div class="form-group">
+                  <label for="numero">Numero :</label>
+                  <input name='id' type='hidden' value='<?= $cliente->id ; ?>'>
+                  <input name="numero" class="form-control" value="<?= $cliente->numero ; ?>">
+              </div>
+
+              <div class="form-group">
+                  <label for="cidade">Cidade :</label>
+                  <input name='id' type='hidden' value='<?= $cliente->id ; ?>'>
+                  <input name="cidade" class="form-control" value="<?= $cliente->cidade ; ?>">
+              </div>    
+
+                
+              </div>
+
+              
+            
 
 
 
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Salvar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
           </div>
+          </form>
         </div>
       </div>
     </div>
+    
 
 
-
-    <div class="modal fade" id="excluirCliente" tabindex="-1" role="dialog">
+    <div class="modal fade" id="excluir<?= $cliente->id; ?>" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -210,22 +222,18 @@
             </button>
           </div>
           <div class="modal-body">
-            <form>
-              <div class="form-group">
-                <label for="nomeCliente">Nome</label>
-                <input type="name" class="form-control" id="nomeCliente" placeholder="<?= $cliente->nome ?>" readonly>
-              </div>
-              <div class="form-group">
-                <label for="cpfCliente">CPF</label>
-                <input type="" class="form-control" id="cpfCliente" placeholder="<?= $cliente->cpf ?>" readonly>
-              </div>
-            </form>
-            <h5 class="centralizado">Deseja Realmente excluir esse cliente?</h5>
+          <form method='POST' action='/deleteCliente'>
 
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-danger">Excluir</button>
+                    <input name="id" type="hidden" value="<?= $cliente->id; ?>">
+                    <br>
+                      <h5 class="centralizado">Deseja Realmente excluir esse Cliente?</h5>
+                    <br>
+                    <hr>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
+
+              
           </div>
         </div>
       </div>
@@ -243,6 +251,8 @@
                 </div>
                 <div class="modal-body">
                   <?php foreach($clientes as $cliente) : ?>
+                    <p><b>Id: </b> <?= $cliente->id ?> </p>
+                    <hr>
                     <p><b>Nome: </b> <?= $cliente->nome ?> </p>
                     <hr>
                     <p><b>Email: </b> <?= $cliente->email ?> </p>
@@ -259,16 +269,17 @@
                     <hr>
                     <?php endforeach; ?>
                 </div>
-                <div class="modal-footer">
+                  <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">Sair</button>
+                  </div>
                 </div>
             </div>
         </div>
-    </div>
+    
 
 
   <!--JS-->
-
+<?php endforeach; ?>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
@@ -276,12 +287,6 @@
 
 
 
-<footer class="page-footer font-small blue">
-
-  <div class="footer-copyright text-center py-3">© 2019 Copyright:
-    <a href="https://codejr.com.br/"> codejr.com.br</a>
-  </div>
-
-</footer>
+<?php require 'views/partial/footer.php'; ?>
 
 </html>
