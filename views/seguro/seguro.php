@@ -55,44 +55,49 @@
         </table>
     </div>
 
-    <div class="modal fade" id="addSeguroModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" >Adicionar Novo Seguro</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h5 class="modal-title" id="addSeguroModalTitulo">Adicionar Novo Seguro</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                 </div>
                 <div class="modal-body">
+                
 
+                    <form method='POST' action="/addSeguro">
+                        <div class="form-group">
+                            <label for="nome">Nome :</label>
+                            <input class="form-control" placeholder="Enter nome" name="nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="preco">Valor</label>
+                            <input class="form-control" placeholder="Enter valor" name="preco">
+                        </div>
+                        <div class="form-group">
+                            <label for="descricao">Descrição</label>
+                            <input class="form-control" placeholder="Enter descricao" name="descricao">
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo:</label> 
+                                <select name = "tipo_seguro_id" class="form-control">     
+                                <label for="pwd">Tipo:</label>
+                                    <?php foreach($tipos as $tipo) : ?>
+                                <option value = "<?= $tipo->id;?>">
+                                    <?= $tipo->nome; ?> 
+                                </option>
+                  
+                                    <?php endforeach; ?> 
 
-                    <form action="processos.php" method='POST'>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Nome</label>
-                            <input type="text" name="nome" class="form-control" placeholder="# insira o seguro #">
-                        </div>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Valor</label>
-                            <input type="text" name="nome" class="form-control" placeholder="# insira o preço #">
-                        </div>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Descrição</label>
-                            <input type="text" name="nome" class="form-control" placeholder="# insira a descrição #">
-                        </div>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-outline-primary dropdown-toggle"          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Tipo
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Tipos</a>
-                            </div>
+                                </select>
                         </div>
                     
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary" name="salvar">Salvar</button>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
                 </form>
                 </div>
             </div>

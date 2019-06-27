@@ -40,6 +40,9 @@ $router->get('vendas', 'controllers/vendas/vendasController.php');
 
 //Seguro
 $router->get('seguros', 'controllers/seguro/seguroController.php');
+$router->post('addSeguro', 'controllers/seguro/addController.php');
+$router->post('deleteSeguro', 'controllers/seguro/deleteController.php');
+$router->post('updateSeguro', 'controllers/seguro/updateController.php');
 
 //Departamento
 $router->post('departameto_add', 'controlllers/add_departamento.php');
