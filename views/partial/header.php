@@ -1,6 +1,6 @@
 <div class="intro">
         <nav class="navbar navbar-expand-lg navbar-light bg-light barra text-white">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/dashboard">
               <img src="assets/imagens/seguradoralogo.png"
                 class="imagem-logo">
             </a>
