@@ -15,6 +15,10 @@
 
     <?php require 'views/partial/header.php'; ?>
 
+    <hr>
+    <h1 class="titulo">Cargo</h1>
+    <hr>
+
     <div class="tabela-seguros">
         <table class="table table-striped">
             <thead>
@@ -58,6 +62,8 @@
     <!-- Modal -->
 
     <?php foreach ($cargos as $cargo) : ?>
+
+    
 
         <div class="modal fade" id="addCargo" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">

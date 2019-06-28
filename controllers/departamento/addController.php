@@ -3,8 +3,8 @@
 $departamentos = $app['database']->selectAll('departamento');
 
 $app['database']->insert('departamento', [
-    'nome' => $_POST['nome'], 
-    
+    'nome' => $_POST['nome'],
+
 ]);
 
 header('Location: /departamentos');

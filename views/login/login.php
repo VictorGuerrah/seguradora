@@ -14,24 +14,24 @@
 <body>
 
     <div class="container login-container">
-            <div class="login-form-1">
-                <h3>Seguradora</h3>
-                <form method="GET" action="/dashboard">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Email *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Senha *" value="" />
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="btnSubmit" value="Entrar"/>
-                    </div>
-                    <div class="form-group">
-                        <a href="" class="ForgetPwd">Esqueceu a senha?</a>
-                    </div>
-                </form>
-            </div>
+        <div class="login-form-1">
+            <h3>Seguradora</h3>
+            <form method="GET" action="/dashboard">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Email *" value="" />
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Senha *" value="" />
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btnSubmit" value="Entrar" />
+                </div>
+                <div class="form-group">
+                    <a href="" class="ForgetPwd">Esqueceu a senha?</a>
+                </div>
+            </form>
         </div>
+    </div>
 
 
 
