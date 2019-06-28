@@ -10,6 +10,7 @@
 			$cargo->departamento_nome = $departamentos[0]->nome;
 		}
 		$departamentos=$app['database']->selectAll('departamento');
+		
      	require 'views/cargo/cargo.php';
 	
 
