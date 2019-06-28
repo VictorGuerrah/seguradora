@@ -36,7 +36,10 @@ $router->post('deleteFuncionarios', 'controllers/funcionario/deleteController.ph
 $router->post('updateFuncionarios', 'controllers/funcionario/updateController.php');
 
 //Venda
-$router->get('vendas', 'controllers/vendas/vendasController.php');
+$router->get('vendas', 'controllers/vendas/showController.php');
+$router->post('addVendas', 'controllers/vendas/addController.php');
+$router->post('deleteVendas', 'controllers/vendas/deleteController.php');
+$router->post('updateVendas', 'controllers/vendas/updateController.php');
 
 //Seguro
 $router->get('seguros', 'controllers/seguro/showController.php');
