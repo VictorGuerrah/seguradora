@@ -14,138 +14,140 @@
 
 <body>
 
-<?php require 'views/partial/header.php'; ?>
+  <?php require 'views/partial/header.php'; ?>
 
-
+  <hr>
+  <h1 class="titulo">Vendas</h1>
+  <hr>
 
   <div class="tabela-seguros">
     <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col" class="th-lg"> </th>
-                <th scope="col" class="th-lg">Cliente</th>
-                <th scope="col" class="th-lg">Funcionário</th>
-                <th scope="col" class="th-lg">Seguro</th>
-                <th scope="col" class="th-lg">Preço Final</th>
-                <th scope="col" class="fix">
-                <button class="btn btn-primary" data-toggle="modal" data-target="#modal" type="submit">Adicionar</button>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php  foreach($vendas as $venda) : ?>
-            <tr>
-                <th scope="row"><?= $venda->id; ?> </th>
-                <td><?= $venda->cliente_nome; ?></td>
-                <td><?= $venda->funcionario_nome; ?></td>
-                <td><?= $venda->seguro_nome; ?></td>
-                <td><?= $venda->preco_final; ?></td>
-                <td>
-                    <button type="button" class="btn btn-outline-success botao" data-toggle="modal"data-target="#exibirSeguro">Exibir</button>
-                    <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#edit<?=$venda->id; ?>">Editar</button>
-                    <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#excluir<?= $venda->id; ?>">Excluir</button>
-              </td>
-            </tr>
-            <?php endforeach; ?>
-        </tbody>
+      <thead>
+        <tr>
+          <th scope="col" class="th-lg"> </th>
+          <th scope="col" class="th-lg">Cliente</th>
+          <th scope="col" class="th-lg">Funcionário</th>
+          <th scope="col" class="th-lg">Seguro</th>
+          <th scope="col" class="th-lg">Preço Final</th>
+          <th scope="col" class="fix">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#modal" type="submit">Adicionar</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($vendas as $venda) : ?>
+          <tr>
+            <th scope="row"><?= $venda->id; ?> </th>
+            <td><?= $venda->cliente_nome; ?></td>
+            <td><?= $venda->funcionario_nome; ?></td>
+            <td><?= $venda->seguro_nome; ?></td>
+            <td><?= $venda->preco_final; ?></td>
+            <td>
+              <button type="button" class="btn btn-outline-success botao" data-toggle="modal" data-target="#exibirSeguro">Exibir</button>
+              <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#edit<?= $venda->id; ?>">Editar</button>
+              <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#excluir<?= $venda->id; ?>">Excluir</button>
+            </td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
     </table>
-</div>
+  </div>
 
 
 
 
 
 
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="addClienteModalTitulo">Adicionar Venda</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addClienteModalTitulo">Adicionar Venda</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
 
           <form method='POST' action="/addVendas">
-            
-              <div class="form-group">
-                  <label for="nome">Anotações :</label>
-                  <input class="form-control" placeholder="Enter anotacoes" name="anotacoes">
-              
-              </div>
-              <div class="form-group">
-                  <label>Cliente:</label> 
-              <select name = "cliente_id" class="form-control">     
-                  <label for="pwd">Cliente:</label>
-                  <?php foreach($clientes as $cliente) : ?>
-                    <option value = "<?= $cliente->id;?>">
-                      <?= $cliente->nome; ?> 
-                    </option>
-                  
-                  <?php endforeach; ?> 
+
+            <div class="form-group">
+              <label for="nome">Anotações :</label>
+              <input class="form-control" placeholder="Enter anotacoes" name="anotacoes">
+
+            </div>
+            <div class="form-group">
+              <label>Cliente:</label>
+              <select name="cliente_id" class="form-control">
+                <label for="pwd">Cliente:</label>
+                <?php foreach ($clientes as $cliente) : ?>
+                  <option value="<?= $cliente->id; ?>">
+                    <?= $cliente->nome; ?>
+                  </option>
+
+                <?php endforeach; ?>
 
               </select>
-              </div>
-              <div class="form-group">
-                  <label for="nome">Desconto :</label>
-                  <input class="form-control" placeholder="Enter desconto" name="desconto">
-              </div>
+            </div>
+            <div class="form-group">
+              <label for="nome">Desconto :</label>
+              <input class="form-control" placeholder="Enter desconto" name="desconto">
+            </div>
 
-              <div class="form-group">
-                  <label>Funcionario:</label> 
-              <select name = "funcionario_id" class="form-control">     
-                  <label for="pwd">Funcionario:</label>
-                  <?php foreach($funcionarios as $funcionario) : ?>
-                    <option value = "<?= $funcionario->id;?>">
-                      <?= $funcionario->nome; ?> 
-                    </option>
-                  
-                  <?php endforeach; ?> 
+            <div class="form-group">
+              <label>Funcionario:</label>
+              <select name="funcionario_id" class="form-control">
+                <label for="pwd">Funcionario:</label>
+                <?php foreach ($funcionarios as $funcionario) : ?>
+                  <option value="<?= $funcionario->id; ?>">
+                    <?= $funcionario->nome; ?>
+                  </option>
 
-              </select>
-              </div>
-
-              <div class="form-group">
-                  <label for="nome">Preço Final :</label>
-                  <input class="form-control" placeholder="Enter preço final" name="preco_final">
-              </div>
-
-              <div class="form-group">
-                  <label for="nome">Quantidade :</label>
-                  <input class="form-control" placeholder="Enter quantidade" name="quantidade">
-              </div>
-
-              <div class="form-group">
-                  <label>Seguro:</label> 
-              <select name = "seguro_id" class="form-control">     
-                  <label for="pwd">Seguro:</label>
-                  <?php foreach($seguros as $seguro) : ?>
-                    <option value = "<?= $seguro->id;?>">
-                      <?= $seguro->nome; ?> 
-                    </option>
-
-                  
-                  <?php endforeach; ?> 
+                <?php endforeach; ?>
 
               </select>
-              </div>
-              <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="submit" class="btn btn-primary">Salvar</button>
-                </div>
-            </form>
-          </div>
-          
-          </div>
+            </div>
+
+            <div class="form-group">
+              <label for="nome">Preço Final :</label>
+              <input class="form-control" placeholder="Enter preço final" name="preco_final">
+            </div>
+
+            <div class="form-group">
+              <label for="nome">Quantidade :</label>
+              <input class="form-control" placeholder="Enter quantidade" name="quantidade">
+            </div>
+
+            <div class="form-group">
+              <label>Seguro:</label>
+              <select name="seguro_id" class="form-control">
+                <label for="pwd">Seguro:</label>
+                <?php foreach ($seguros as $seguro) : ?>
+                  <option value="<?= $seguro->id; ?>">
+                    <?= $seguro->nome; ?>
+                  </option>
+
+
+                <?php endforeach; ?>
+
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-primary">Salvar</button>
+            </div>
+          </form>
         </div>
+
       </div>
     </div>
+  </div>
+  </div>
 
 
-    <?php foreach ($vendas as $venda) : ?>
+  <?php foreach ($vendas as $venda) : ?>
 
-    <div class="modal fade" id="edit<?=$venda->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="edit<?= $venda->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -157,82 +159,82 @@
 
           <div class="modal-body">
 
-          <form method='POST' action='/updateVendas'>
-                <div class="form-group">
-                  <label for="nome">Anotações :</label>
-                  <input name='id' type='hidden' value='<?= $venda->id ; ?>'>
-                  <input name="nome" class="form-control" value="<?= $venda->anotacoes ; ?>">
+            <form method='POST' action='/updateVendas'>
+              <div class="form-group">
+                <label for="nome">Anotações :</label>
+                <input name='id' type='hidden' value='<?= $venda->id; ?>'>
+                <input name="nome" class="form-control" value="<?= $venda->anotacoes; ?>">
 
-                </div>
+              </div>
 
-                <div class="form-group">
-                  <label>Cliente:</label>
-                  <select name="cliente_id" class="form-control">
-                                <?php foreach ($clientes as $cliente) : ?>
+              <div class="form-group">
+                <label>Cliente:</label>
+                <select name="cliente_id" class="form-control">
+                  <?php foreach ($clientes as $cliente) : ?>
 
-                                    <option value="<?= $cliente->id; ?>">
-                                        <?= $cliente->nome; ?>
-                                    </option>
+                    <option value="<?= $cliente->id; ?>">
+                      <?= $cliente->nome; ?>
+                    </option>
 
-                                <?php endforeach; ?>
+                  <?php endforeach; ?>
 
-                  </select>
-                </div>
+                </select>
+              </div>
 
-                <div class="form-group">
-                  <label for="email">Desconto:</label>
-                  <input name='id' type='hidden' value="<?php $venda->id ; ?>">
-                  <input name="email" class="form-control" value="<?= $venda->desconto ; ?>">
-                </div>
+              <div class="form-group">
+                <label for="email">Desconto:</label>
+                <input name='id' type='hidden' value="<?php $venda->id; ?>">
+                <input name="email" class="form-control" value="<?= $venda->desconto; ?>">
+              </div>
 
-                <div class="form-group">
-                  <label>Funcionario:</label>
-                  <select name="funcionario_id" class="form-control">
-                                <?php foreach ($funcionarios as $funcionario) : ?>
+              <div class="form-group">
+                <label>Funcionario:</label>
+                <select name="funcionario_id" class="form-control">
+                  <?php foreach ($funcionarios as $funcionario) : ?>
 
-                                    <option value="<?= $funcionario->id; ?>">
-                                        <?= $funcionario->nome; ?>
-                                    </option>
+                    <option value="<?= $funcionario->id; ?>">
+                      <?= $funcionario->nome; ?>
+                    </option>
 
-                                <?php endforeach; ?>
+                  <?php endforeach; ?>
 
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="pwd">Preço Final:</label>
-                  <input name='id' type='hidden' value='<?= $venda->id ; ?>'>
-                  <input name="password" class="form-control" value="<?= $venda->preco_final ; ?>">
-                </div>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="pwd">Preço Final:</label>
+                <input name='id' type='hidden' value='<?= $venda->id; ?>'>
+                <input name="password" class="form-control" value="<?= $venda->preco_final; ?>">
+              </div>
 
-                <div class="form-group">
-                  <label for="pwd">Quantidade:</label>
-                  <input name='id' type='hidden' value='<?= $venda->id ; ?>'>
-                  <input name="password" class="form-control" value="<?= $venda->quantidade ; ?>">
-                </div>
-               
-                <div class="form-group">
-                  <label>Seguro:</label>
-                  <select name="seguro_id" class="form-control">
-                                <?php foreach ($seguros as $seguro) : ?>
+              <div class="form-group">
+                <label for="pwd">Quantidade:</label>
+                <input name='id' type='hidden' value='<?= $venda->id; ?>'>
+                <input name="password" class="form-control" value="<?= $venda->quantidade; ?>">
+              </div>
 
-                                    <option value="<?= $seguro->id; ?>">
-                                        <?= $seguro->nome; ?>
-                                    </option>
+              <div class="form-group">
+                <label>Seguro:</label>
+                <select name="seguro_id" class="form-control">
+                  <?php foreach ($seguros as $seguro) : ?>
 
-                                <?php endforeach; ?>
+                    <option value="<?= $seguro->id; ?>">
+                      <?= $seguro->nome; ?>
+                    </option>
 
-                  </select>
-                </div>
-                
-               
+                  <?php endforeach; ?>
+
+                </select>
+              </div>
+
+
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-primary">Salvar</button>
-          </div>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary">Salvar</button>
           </div>
         </div>
       </div>
+    </div>
     </div>
 
 
@@ -247,55 +249,55 @@
             </button>
           </div>
           <div class="modal-body">
-          <form method='POST' action='/deleteVendas'>
+            <form method='POST' action='/deleteVendas'>
               <input name="id" type="hidden" value="<?= $venda->id; ?>">
-                    <br>
-                      <h5 class="centralizado">Deseja Realmente excluir essa Venda?</h5>
-                    <br>
-                    <hr>
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                      <button type="submit" class="btn btn-danger">Excluir</button>
-          </form>
+              <br>
+              <h5 class="centralizado">Deseja Realmente excluir essa Venda?</h5>
+              <br>
+              <hr>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-danger">Excluir</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
 
     <div class="modal fade" id="exibirSeguro" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exibirSeguroModal">Detalhes</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                  
-                    <p><b>Nome: </b> <?= $cliente->nome ?> </p>
-                    <hr>
-                    <p><b>Email: </b> <?= $cliente->email ?> </p>
-                    <hr>
-                    <p><b>CPF: </b> <?= $cliente->cpf ?> </p>
-                    <hr>
-                    <p><b>Cidade: </b><?= $cliente->cidade ?></p>
-                    <hr>
-                    <p><b>Bairro :</b> <?= $cliente->bairro ?></p>
-                    <hr>
-                    <p><b>Rua: </b> <?= $cliente->rua ?></p>
-                    <hr>
-                    <p><b>Número: </b> <?= $cliente->numero ?></p>
-                    <hr>
-                   
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Sair</button>
-                </div>
-            </div>
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exibirSeguroModal">Detalhes</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <p><b>Nome: </b> <?= $cliente->nome ?> </p>
+            <hr>
+            <p><b>Email: </b> <?= $cliente->email ?> </p>
+            <hr>
+            <p><b>CPF: </b> <?= $cliente->cpf ?> </p>
+            <hr>
+            <p><b>Cidade: </b><?= $cliente->cidade ?></p>
+            <hr>
+            <p><b>Bairro :</b> <?= $cliente->bairro ?></p>
+            <hr>
+            <p><b>Rua: </b> <?= $cliente->rua ?></p>
+            <hr>
+            <p><b>Número: </b> <?= $cliente->numero ?></p>
+            <hr>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Sair</button>
+          </div>
         </div>
+      </div>
     </div>
 
-  <!--JS-->
+    <!--JS-->
   <?php endforeach; ?>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
