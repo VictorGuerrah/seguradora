@@ -80,15 +80,26 @@
                         <form method='POST' action="/addCargo">
                             <div class="form-group">
                                 <label>Cargo:</label>
-                                <input class="form-control" name="nome">
-                                <br>
-                                <select name="departamento_id" class="form-control">
-                                    <?php foreach ($departamentos as $departamento) : ?>
-                                        <option value="<?= $departamento->id; ?>">
-                                            <?= $departamento->nome; ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                </select>
+                                <input class="form-control"placeholder="Enter cargo" name="nome">
+                            </div>
+
+                               
+                               
+             
+
+                                <div class="form-group">
+                                    <label>Departamento:</label>
+                                    <select name="departamento_id" class="form-control">
+                                        <label for="pwd">Departamento:</label>
+                                        <?php foreach ($departamentos as $departamento) : ?>
+                                            <option value="<?= $departamento->id; ?>">
+                                                <?= $departamento->nome; ?>
+                                            </option>
+
+                                        <?php endforeach; ?>
+
+                                    </select>
+                                </div>
 
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -118,20 +129,25 @@
                             <div class="form-group">
                                 <label for="nomeSeguro">Cargo</label>
                                 <input name='id' type='hidden' value='<?= $cargo->id; ?>'>
-                                <input name="nome" placeholder="<?= $cargo->nome; ?> ">
-                                <input name="departamento_id" type="hidden" value="<?= $cargo->departamento_id; ?> ">
+                                <input name="nome" class="form-control" value="<?= $cargo->nome; ?> ">
+                                
                             </div>
+                            
 
-                            <select name="departamento_id">
-                                <?php foreach ($departamentos as $departamento) : ?>
+                           
+                    <div class="form-group">
+                        <label>Departamento:</label>
+                        <select name="departamento_id" class="form-control">
+                            <?php foreach ($departamentos as $departamento) : ?>
 
-                                    <option value="<?= $departamento->id; ?>">
-                                        <?= $departamento->nome; ?>
-                                    </option>
+                                <option value="<?= $departamento->id; ?>">
+                                    <?= $departamento->nome; ?>
+                                </option>
 
-                                <?php endforeach; ?>
+                            <?php endforeach; ?>
 
-                            </select>
+                        </select>
+                    </div>
 
                             <br>
                             <hr>

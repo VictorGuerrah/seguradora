@@ -78,15 +78,6 @@
                             <input class="form-control" placeholder="Enter nome" name="nome">
                         </div>
                         <div class="form-group">
-                            <label for="preco">Valor</label>
-                            <input class="form-control" placeholder="Enter valor" name="preco">
-                        </div>
-                        <div class="form-group">
-                            <label for="descricao">Descrição</label>
-                            <input class="form-control" placeholder="Enter descricao" name="descricao">
-                        </div>
-
-                        <div class="form-group">
                             <label>Tipo:</label> 
                                 <select name = "tipo_seguro_id" class="form-control">     
                             <label for="pwd">Tipo:</label>
@@ -99,6 +90,16 @@
 
                                 </select>
                         </div>
+                        <div class="form-group">
+                            <label for="preco">Valor</label>
+                            <input class="form-control" placeholder="Enter valor" name="preco">
+                        </div>
+                        <div class="form-group">
+                            <label for="descricao">Descrição</label>
+                            <input class="form-control" placeholder="Enter descricao" name="descricao">
+                        </div>
+
+                        
                     
     </div>
                 <div class="modal-footer">

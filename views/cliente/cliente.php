@@ -99,8 +99,8 @@
             </div>
 
             <div class="form-group">
-              <label for="email">Bairro :</label>
-              <input class="form-control" placeholder="Enter bairro" name="bairro">
+              <label for="email">CPF :</label>
+              <input class="form-control" placeholder="Enter CPF" name="cpf">
             </div>
 
             <div class="form-group">
@@ -109,8 +109,13 @@
             </div>
 
             <div class="form-group">
-              <label for="email">CPF :</label>
-              <input class="form-control" placeholder="Enter CPF" name="cpf">
+              <label for="email">Bairro :</label>
+              <input class="form-control" placeholder="Enter bairro" name="bairro">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Rua :</label>
+              <input class="form-control" placeholder="Enter rua" name="rua">
             </div>
 
             <div class="form-group">
@@ -118,10 +123,7 @@
               <input class="form-control" placeholder="Enter numero" name="numero">
             </div>
 
-            <div class="form-group">
-              <label for="email">Rua :</label>
-              <input class="form-control" placeholder="Enter rua" name="rua">
-            </div>
+            
 
 
 
@@ -169,8 +171,8 @@
               </div>
 
               <div class="form-group">
-                <label for="rua">Rua :</label>
-                <input name="rua" class="form-control" value="<?= $cliente->rua; ?>">
+                <label for="cidade">Cidade :</label>
+                <input name="cidade" class="form-control" value="<?= $cliente->cidade; ?>">
               </div>
 
               <div class="form-group">
@@ -179,14 +181,16 @@
               </div>
 
               <div class="form-group">
+                <label for="rua">Rua :</label>
+                <input name="rua" class="form-control" value="<?= $cliente->rua; ?>">
+              </div>      
+
+              <div class="form-group">
                 <label for="numero">Numero :</label>
                 <input name="numero" class="form-control" value="<?= $cliente->numero; ?>">
               </div>
 
-              <div class="form-group">
-                <label for="cidade">Cidade :</label>
-                <input name="cidade" class="form-control" value="<?= $cliente->cidade; ?>">
-              </div>
+              
 
 
         <div class="modal-footer">

@@ -71,10 +71,10 @@
 
           <form method='POST' action="/addVendas">
 
+            
             <div class="form-group">
-              <label for="nome">Anotações :</label>
-              <input class="form-control" placeholder="Enter anotacoes" name="anotacoes">
-
+              <label for="nome">Quantidade :</label>
+              <input class="form-control" placeholder="Enter quantidade" name="quantidade">
             </div>
             <div class="form-group">
               <label>Cliente:</label>
@@ -88,10 +88,6 @@
                 <?php endforeach; ?>
 
               </select>
-            </div>
-            <div class="form-group">
-              <label for="nome">Desconto :</label>
-              <input class="form-control" placeholder="Enter desconto" name="desconto">
             </div>
 
             <div class="form-group">
@@ -109,16 +105,6 @@
             </div>
 
             <div class="form-group">
-              <label for="nome">Preço Final :</label>
-              <input class="form-control" placeholder="Enter preço final" name="preco_final">
-            </div>
-
-            <div class="form-group">
-              <label for="nome">Quantidade :</label>
-              <input class="form-control" placeholder="Enter quantidade" name="quantidade">
-            </div>
-
-            <div class="form-group">
               <label>Seguro:</label>
               <select name="seguro_id" class="form-control">
                 <label for="pwd">Seguro:</label>
@@ -132,6 +118,25 @@
 
               </select>
             </div>
+
+            <div class="form-group">
+              <label for="nome">Desconto :</label>
+              <input class="form-control" placeholder="Enter desconto" name="desconto">
+            </div>
+
+            
+            <div class="form-group">
+              <label for="nome">Preço Final :</label>
+              <input class="form-control" placeholder="Enter preço final" name="preco_final">
+            </div>
+
+           
+            <div class="form-group">
+              <label for="nome">Anotações :</label>
+              <input class="form-control" placeholder="Enter anotacoes" name="anotacoes">
+
+            </div>
+            
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="submit" class="btn btn-primary">Salvar</button>
@@ -160,11 +165,10 @@
           <div class="modal-body">
 
             <form method='POST' action='/updateVendas'>
-              <div class="form-group">
-                <label for="nome">Anotações :</label>
+            <div class="form-group">
+                <label for="pwd">Quantidade:</label>
                 <input name='id' type='hidden' value='<?= $venda->id; ?>'>
-                <input name="nome" class="form-control" value="<?= $venda->anotacoes; ?>">
-
+                <input name="password" class="form-control" value="<?= $venda->quantidade; ?>">
               </div>
 
               <div class="form-group">
@@ -182,12 +186,6 @@
               </div>
 
               <div class="form-group">
-                <label for="email">Desconto:</label>
-                <input name='id' type='hidden' value="<?php $venda->id; ?>">
-                <input name="email" class="form-control" value="<?= $venda->desconto; ?>">
-              </div>
-
-              <div class="form-group">
                 <label>Funcionario:</label>
                 <select name="funcionario_id" class="form-control">
                   <?php foreach ($funcionarios as $funcionario) : ?>
@@ -199,17 +197,6 @@
                   <?php endforeach; ?>
 
                 </select>
-              </div>
-              <div class="form-group">
-                <label for="pwd">Preço Final:</label>
-                <input name='id' type='hidden' value='<?= $venda->id; ?>'>
-                <input name="password" class="form-control" value="<?= $venda->preco_final; ?>">
-              </div>
-
-              <div class="form-group">
-                <label for="pwd">Quantidade:</label>
-                <input name='id' type='hidden' value='<?= $venda->id; ?>'>
-                <input name="password" class="form-control" value="<?= $venda->quantidade; ?>">
               </div>
 
               <div class="form-group">
@@ -226,6 +213,26 @@
                 </select>
               </div>
 
+              <div class="form-group">
+                <label for="email">Desconto:</label>
+                <input name='id' type='hidden' value="<?php $venda->id; ?>">
+                <input name="email" class="form-control" value="<?= $venda->desconto; ?>">
+              </div>
+
+              
+              <div class="form-group">
+                <label for="pwd">Preço Final:</label>
+                <input name='id' type='hidden' value='<?= $venda->id; ?>'>
+                <input name="password" class="form-control" value="<?= $venda->preco_final; ?>">
+              </div>
+  
+
+              <div class="form-group">
+                <label for="nome">Anotações :</label>
+                <input name='id' type='hidden' value='<?= $venda->id; ?>'>
+                <input name="nome" class="form-control" value="<?= $venda->anotacoes; ?>">
+
+              </div>
 
           </div>
           <div class="modal-footer">
@@ -275,20 +282,22 @@
           </div>
           <div class="modal-body">
 
-            <p><b>Nome: </b> <?= $venda->cliente_nome ?> </p>
+            <p><b>Quantidade: </b> <?= $venda->quantidade ?></p>
             <hr>
-            <p><b>Email: </b> <?= $cliente->email ?> </p>
+            <p><b>Cliente: </b> <?= $venda->cliente_nome ?> </p>
             <hr>
-            <p><b>CPF: </b> <?= $cliente->cpf ?> </p>
+            <p><b>Funcionario: </b> <?= $venda->funcionario_nome ?> </p>
             <hr>
-            <p><b>Cidade: </b><?= $cliente->cidade ?></p>
+            <p><b>Seguro: </b> <?= $venda->seguro_nome ?> </p>
             <hr>
-            <p><b>Bairro :</b> <?= $cliente->bairro ?></p>
+            <p><b>Desconto: </b><?= $venda->desconto ?></p>
             <hr>
-            <p><b>Rua: </b> <?= $cliente->rua ?></p>
+            <p><b>Preço Final:</b> <?= $venda->preco_final ?></p>
             <hr>
-            <p><b>Número: </b> <?= $cliente->numero ?></p>
+            <p><b>Anotações: </b> <?= $venda->anotacoes ?></p>
             <hr>
+
+            
 
           </div>
           <div class="modal-footer">

@@ -69,7 +69,11 @@
           <div class="modal-body">
 
             <form method='POST' action='/addDepartamento'>
-              <input name="nome">
+              <div class="form-group">
+                <label>Departamento:</label>
+                <input class="form-control"placeholder="Enter departamento" name="nome">
+              </div>
+
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="submit" class="btn btn-primary">Salvar</button>
             </form>
@@ -95,9 +99,10 @@
 
             <form method="POST" action="/updateDepartamento">
               <div class="form-group">
-                <label>Nome</label>
+                <label for="nomeSeguro">Departamento</label>
                 <input name='id' type='hidden' value='<?= $departamento->id; ?>'>
-                <input name="nome" class="form-control" placeholder="<?= $departamento->nome; ?>">
+                <input name="nome" class="form-control" value="<?= $departamento->nome; ?> ">
+                                
               </div>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
               <button type="sunmit" class="btn btn-primary">Salvar</button>

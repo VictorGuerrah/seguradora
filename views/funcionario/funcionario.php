@@ -23,7 +23,7 @@
          <tr>
          <tr>
            <th scope="col"> </th>
-           <th scope="col"></th>
+           
            <th scope="col">Nome</th>
            <th scope="col">Email</th>
            <th scope="col">Cargo</th>
@@ -43,13 +43,7 @@
 
              </th>
 
-             <td>
-               <div class="foto">
-
-                 <?= $funcionario->url_imagem; ?>
-
-               </div>
-             </td>
+             
              <td>
 
                <?= $funcionario->nome; ?>
@@ -91,10 +85,7 @@
 
 
            <form method='POST' action="/addFuncionarios">
-             <div class="form-group">
-               <label for="pwd">Imagem:</label>
-               <input name="url_imagem">
-             </div>
+             
              <div class="form-group">
                <label for="nome">Nome :</label>
                <input class="form-control" placeholder="Enter nome" name="nome">
@@ -103,10 +94,7 @@
                <label for="email">Email:</label>
                <input class="form-control" placeholder="Enter email" name="email">
              </div>
-             <div class="form-group">
-               <label for="pwd">Password:</label>
-               <input class="form-control" placeholder="Enter password" name="password">
-             </div>
+             
 
              <div class="form-group">
                <label>Cargo:</label>
@@ -121,7 +109,10 @@
 
                </select>
              </div>
-
+             <div class="form-group">
+               <label for="pwd">Password:</label>
+               <input class="form-control" placeholder="Enter password" name="password">
+             </div>
 
 
 
@@ -168,10 +159,7 @@
            <div class="modal-body">
 
              <form method='POST' action='/updateFuncionarios'>
-               <div class="form-group">
-                 <label for="pwd">Imagem:</label>
-                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaacinxhnYcBnhULvPCpYB1rgJfcaj1MjLAAXagZi2qkSafv42">
-               </div>
+              
                <div class="form-group">
                  <label for="nome">Nome :</label>
                  <input name='id' type='hidden' value='<?= $funcionario->id; ?>'>
@@ -183,11 +171,7 @@
                  <input name='id' type='hidden' value='<?= $funcionario->id; ?>'>
                  <input name="email" class="form-control" value="<?= $funcionario->email; ?>">
                </div>
-               <div class="form-group">
-                 <label for="pwd">Password:</label>
-                 <input name='id' type='hidden' value='<?= $funcionario->id; ?>'>
-                 <input name="password" class="form-control" value="<?= $funcionario->password; ?>">
-               </div>
+               
 
                <div class="form-group">
                  <label>Cargo:</label>
@@ -202,7 +186,11 @@
 
                  </select>
                </div>
-
+               <div class="form-group">
+                 <label for="pwd">Password:</label>
+                 <input name='id' type='hidden' value='<?= $funcionario->id; ?>'>
+                 <input name="password" class="form-control" value="<?= $funcionario->password; ?>">
+               </div>
 
            </div>
            <div class="modal-footer">
