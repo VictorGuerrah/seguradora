@@ -1,7 +1,7 @@
 <?php
 
 $vendas = $app['database']->selectAll('venda');
-die(var_dump($_POST));
+
 $app['database']->update('venda', [
     'anotacoes' => $_POST['anotacoes'], 
     'cliente_id' => $_POST['cliente_id'],

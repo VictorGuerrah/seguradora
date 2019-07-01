@@ -24,31 +24,32 @@
         <table class="table table-striped">
             <thead>
 
-                <?php foreach ($seguros as $seguro) : ?>
+            
 
-                    <tr>
-                        <th scope="col"> </th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">Preço</th>
-                        <th scope="col" class="fix">
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#modal" type="submit">Adicionar</button>
-
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row"><?= $seguro->id; ?></th>
-                        <td><?= $seguro->nome; ?></td>
-                        <td><?= $seguro->tipo_nome; ?></td>
-                        <td><?= $seguro->preco; ?></td>
-                        <td>
-                            <button type="button" class="btn btn-outline-success botao" data-toggle="modal" data-target="#exibirSeguro">Exibir</button>
-                            <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#editarSeguro">Editar</button>
-                            <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#excluirSeguro">Excluir</button>
-                        </td>
-                    </tr>
+                <tr>
+                    <th scope="col"> </th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col" class="fix">
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#modal" type="submit">Adicionar</button>
+         
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach($seguros as $seguro) : ?>
+                <tr>
+                    <th scope="row"><?= $seguro->id; ?></th>
+                    <td><?= $seguro->nome; ?></td>
+                    <td><?= $seguro->tipo_seguro_nome; ?></td>
+                    <td><?= $seguro->preco; ?></td>
+                    <td>
+                        <button type="button" class="btn btn-outline-success botao" data-toggle="modal" data-target="#exibirSeguro<?= $seguro->id; ?>">Exibir</button>
+                        <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#editarSeguro<?= $seguro->id; ?>">Editar</button>
+                        <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#excluirSeguro<?= $seguro->id; ?>">Excluir</button>
+                    </td>
+                </tr>
 
                 <?php endforeach; ?>
 
@@ -86,20 +87,20 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Tipo:</label>
-                            <select name="tipo_seguro_id" class="form-control">
-                                <label for="pwd">Tipo:</label>
-                                <?php foreach ($tipos as $tipos) : ?>
-                                    <option value="<?= $tipo->id; ?>">
-                                        <?= $tipo->nome; ?>
-                                    </option>
+                            <label>Tipo:</label> 
+                                <select name = "tipo_seguro_id" class="form-control">     
+                            <label for="pwd">Tipo:</label>
+                            <?php foreach($tipos as $tipo) : ?>
+                                <option value = "<?= $tipo->id;?>">
+                                    <?= $tipo->nome; ?> 
+                                </option>
+                  
+                            <?php endforeach; ?> 
 
-                                <?php endforeach; ?>
-
-                            </select>
+                                </select>
                         </div>
-
-                </div>
+                    
+    </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Salvar</button>

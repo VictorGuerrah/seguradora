@@ -231,6 +231,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             <button type="submit" class="btn btn-primary">Salvar</button>
+            </form>
           </div>
         </div>
       </div>
@@ -274,7 +275,7 @@
           </div>
           <div class="modal-body">
 
-            <p><b>Nome: </b> <?= $cliente->nome ?> </p>
+            <p><b>Nome: </b> <?= $venda->cliente_nome ?> </p>
             <hr>
             <p><b>Email: </b> <?= $cliente->email ?> </p>
             <hr>

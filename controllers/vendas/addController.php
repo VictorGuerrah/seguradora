@@ -2,7 +2,7 @@
 
 $vendas = $app['database']->selectAll('venda');
 var_dump($_POST);
-$app['database']->update('venda', [
+$app['database']->insert('venda', [
     'anotacoes' => $_POST['anotacoes'], 
     'cliente_id' => $_POST['cliente_id'],
     'desconto' => $_POST['desconto'],

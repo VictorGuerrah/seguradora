@@ -139,7 +139,7 @@
 
   <?php foreach ($clientes as $cliente) : ?>
 
-    <div class="modal fade" id="edit<?= $cliente->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="edit<?=$cliente->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -160,49 +160,35 @@
 
               <div class="form-group">
                 <label for="email">Email :</label>
-                <input name='id' type='hidden' value='<?= $cliente->id; ?>'>
                 <input name="email" class="form-control" value="<?= $cliente->email; ?>">
               </div>
 
               <div class="form-group">
                 <label for="cpf">CPF :</label>
-                <input name='id' type='hidden' value='<?= $cliente->id; ?>'>
                 <input name="cpf" class="form-control" value="<?= $cliente->cpf; ?>">
               </div>
 
               <div class="form-group">
                 <label for="rua">Rua :</label>
-                <input name='id' type='hidden' value='<?= $cliente->id; ?>'>
                 <input name="rua" class="form-control" value="<?= $cliente->rua; ?>">
               </div>
 
               <div class="form-group">
                 <label for="bairro">Bairro :</label>
-                <input name='id' type='hidden' value='<?= $cliente->id; ?>'>
                 <input name="bairro" class="form-control" value="<?= $cliente->bairro; ?>">
               </div>
 
               <div class="form-group">
                 <label for="numero">Numero :</label>
-                <input name='id' type='hidden' value='<?= $cliente->id; ?>'>
                 <input name="numero" class="form-control" value="<?= $cliente->numero; ?>">
               </div>
 
               <div class="form-group">
                 <label for="cidade">Cidade :</label>
-                <input name='id' type='hidden' value='<?= $cliente->id; ?>'>
                 <input name="cidade" class="form-control" value="<?= $cliente->cidade; ?>">
               </div>
 
 
-          </div>
-
-
-
-
-
-
-        </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
           <button type="submit" class="btn btn-primary">Salvar</button>
@@ -210,10 +196,11 @@
         </form>
       </div>
     </div>
-    </div>
+  </div>
 
 
-
+</div>
+</div>
     <div class="modal fade" id="excluir<?= $cliente->id; ?>" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
