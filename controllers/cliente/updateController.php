@@ -12,4 +12,4 @@ $app['database']->update('cliente', [
     'rua' => $_POST['rua'],
     
 ], $_POST['id']);
-header('Location: /cliente');
+header('Location: /clientes');

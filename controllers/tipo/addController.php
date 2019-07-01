@@ -1,6 +1,6 @@
 <?php
 
-$tios = $app['database']->selectAll('tipo_seguro');
+$tipos = $app['database']->selectAll('tipo_seguro');
 
 $app['database']->insert('tipo_seguro', 
 [

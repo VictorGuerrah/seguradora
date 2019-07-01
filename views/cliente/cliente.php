@@ -58,7 +58,7 @@
             </td>
 
             <td>
-            <button type="button" class="btn btn-outline-success botao" data-toggle="modal" data-target="#exibirCliente">Exibir</button>
+            <button type="button" class="btn btn-outline-success botao" data-toggle="modal" data-target="#exibirCliente<?= $cliente->id; ?>">Exibir</button>
               <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#edit<?=$cliente->id; ?>">Editar</button>
               <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#excluir<?= $cliente->id; ?>">Excluir</button>
             </td>
@@ -193,14 +193,7 @@
               </div>    
 
                 
-              </div>
-
-              
-            
-
-
-
-          </div>
+             
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
             <button type="submit" class="btn btn-primary">Salvar</button>
@@ -213,17 +206,16 @@
 
 
     <div class="modal fade" id="excluir<?= $cliente->id; ?>" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modalEcluir" id="excluirModal">Excluir Cliente</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-          <form method='POST' action='/deleteCliente'>
-
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modalEcluir" id="excluirModal">Excluir Cliente</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                  <form method='POST' action='/deleteCliente'>
                     <input name="id" type="hidden" value="<?= $cliente->id; ?>">
                     <br>
                       <h5 class="centralizado">Deseja Realmente excluir esse Cliente?</h5>
@@ -233,14 +225,13 @@
                       <button type="submit" class="btn btn-danger">Excluir</button>
                     </form>
 
-              
-          </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
 
-    <div class="modal fade" id="exibirCliente" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="exibirCliente<?= $cliente->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

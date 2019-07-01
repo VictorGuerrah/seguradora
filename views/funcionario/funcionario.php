@@ -61,7 +61,7 @@
               </td>
               <td>
                 <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#edit<?=$funcionario->id; ?>">Editar</button>
-                <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#excluirSeguro<?= $funcionario->id; ?>">Excluir</button>
+                <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#excluir<?= $funcionario->id; ?>">Excluir</button>
               </td>
             </tr>
             <?php endforeach; ?>  
@@ -208,7 +208,7 @@
 
 
   
-  <div class="modal fade" id="excluirSeguro<?= $funcionario->id; ?>" tabindex="-1" role="dialog">
+  <div class="modal fade" id="excluir<?= $funcionario->id; ?>" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

@@ -20,7 +20,7 @@
         <table class="table table-striped">
             <thead>
 
-            <?php foreach($seguros as $seguro) : ?>
+            
 
                 <tr>
                     <th scope="col"> </th>
@@ -34,18 +34,16 @@
                 </tr>
             </thead>
             <tbody>
+            <?php foreach($seguros as $seguro) : ?>
                 <tr>
                     <th scope="row"><?= $seguro->id; ?></th>
                     <td><?= $seguro->nome; ?></td>
-                    <td><?= $seguro->tipo_nome; ?></td>
+                    <td><?= $seguro->tipo_seguro_nome; ?></td>
                     <td><?= $seguro->preco; ?></td>
                     <td>
-                        <button type="button" class="btn btn-outline-success botao" data-toggle="modal"
-                            data-target="#exibirSeguro">Exibir</button>
-                        <button type="button" class="btn btn-outline-primary botao" data-toggle="modal"
-                            data-target="#editarSeguro">Editar</button>
-                        <button type="button" class="btn btn-outline-danger botao" data-toggle="modal"
-                            data-target="#excluirSeguro">Excluir</button>
+                        <button type="button" class="btn btn-outline-success botao" data-toggle="modal" data-target="#exibirSeguro<?= $seguro->id; ?>">Exibir</button>
+                        <button type="button" class="btn btn-outline-primary botao" data-toggle="modal" data-target="#editarSeguro<?= $seguro->id; ?>">Editar</button>
+                        <button type="button" class="btn btn-outline-danger botao" data-toggle="modal" data-target="#excluirSeguro<?= $seguro->id; ?>">Excluir</button>
                     </td>
                 </tr>
 
@@ -88,7 +86,7 @@
                             <label>Tipo:</label> 
                                 <select name = "tipo_seguro_id" class="form-control">     
                             <label for="pwd">Tipo:</label>
-                            <?php foreach($tipos as $tipos) : ?>
+                            <?php foreach($tipos as $tipo) : ?>
                                 <option value = "<?= $tipo->id;?>">
                                     <?= $tipo->nome; ?> 
                                 </option>
@@ -98,7 +96,7 @@
                                 </select>
                         </div>
                     
-                </div>
+    </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-primary">Salvar</button>
@@ -108,8 +106,10 @@
         </div>
     </div>
 
+    <?php foreach($seguros as $seguro) : ?>
 
-    <div class="modal fade" id="editarSeguro" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <div class="modal fade" id="editarSeguro<?= $seguro->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -120,39 +120,56 @@
                 </div>
                 <div class="modal-body">
 
-                    <form>
+                <form method='POST' action='/updateSeguro'>
                         <div class="form-group">
-                            <label for="nomeSeguro">Seguro</label>
-                            <input type="name" class="form-control" id="nomeSeguro" placeholder="<?= $seguro->nome; ?>">
+                            <label for="nome">Seguro :</label>
+                            <input name='id' type='hidden' value='<?= $seguro->id ; ?>'>
+                            <input name="nome" class="form-control" value="<?= $seguro->nome ; ?>">
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tipo:</label>
+                                <select name="tipo_seguro_id" class="form-control">
+                                <?php foreach ($tipos as $tipo) : ?>
+
+                                    <option value="<?= $tipo->id; ?>">
+                                        <?= $tipo->nome; ?>
+                                    </option>
+
+                                <?php endforeach; ?>
+
+                                </select>
+                         </div>
+                        <div class="form-group">
+                            <label for="preco">Valor :</label>
+                            <input name="preco" class="form-control" value="<?= $seguro->preco ; ?>">
+
                         </div>
                         <div class="form-group">
-                            <label for="tipoSeguro">Tipo</label>
-                            <input type="tipo" class="form-control" id="tipoSeguro" placeholder="<?= $seguro->tipo_nome; ?>">
+                            <label for="descricao">Descrição :</label>
+                            <input name="descricao" class="form-control" value="<?= $seguro->descricao ; ?>">
+
                         </div>
-                        <div class="form-group">
-                            <label for="valorSeguro">Valor</label>
-                            <input type="" class="form-control" id="valorSeguro" placeholder="R$<?= $seguro->preco; ?>">
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Salvar</button>
                         </div>
-                        <div class="form-group">
-                            <label for="valorSeguro">Descrição</label>
-                            <input type="" class="form-control" id="valorSeguro" placeholder="<?= $seguro->descricao; ?>">
-                        </div>
+                   
                     </form>
 
 
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Salvar</button>
-                </div>
-            </div>
+               
+                    
         </div>
     </div>
+</div>
+</div>
 
 
-
-    <div class="modal fade" id="excluirSeguro" tabindex="-1" role="dialog">
+    <div class="modal fade" id="excluirSeguro<?= $seguro->id; ?>" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -162,34 +179,25 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="nomeSeguro">Seguro</label>
-                            <input type="name" class="form-control" id="nomeCliente" placeholder="<?= $seguro->nome; ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoSeguro">Tipo</label>
-                            <input type="" class="form-control" id="tipoSeguro" placeholder="<?= $seguro->tipo_nome; ?>" readonly>
-                        </div>
-                        <div class="form-group">
-                            <label for="tipoSeguro">Valor</label>
-                            <input type="" class="form-control" id="tipoSeguro" placeholder="R$<?= $seguro->preco; ?>" readonly>
-                        </div>
-                    </form>
-                    <h5 class="centralizado">Deseja realmente excluir esse seguro?</h5>
+                    <form method='POST' action='/deleteSeguro'>
 
+                    <input name="id" type="hidden" value="<?= $seguro->id; ?>">
+                    <br>
+                      <h5 class="centralizado">Deseja Realmente excluir esse Seguro?</h5>
+                    <br>
+                    <hr>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-danger">Excluir</button>
+                    </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Excluir</button>
-                </div>
+                    
             </div>
         </div>
     </div>
 
 
 
-    <div class="modal fade" id="exibirSeguro" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal fade" id="exibirSeguro<?= $seguro->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -202,7 +210,7 @@
 
                     <p><b>Seguro: </b> <?= $seguro->nome; ?></p>
                     <hr>
-                    <p><b>Tipo: </b> <?= $seguro->tipo_nome; ?></p>
+                    <p><b>Tipo: </b> <?= $seguro->tipo_seguro_nome; ?></p>
                     <hr>
                     <p><b>Valor: </b>R$<?= $seguro->preco; ?></p>
                     <hr>
@@ -225,6 +233,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
 </body>
 
+<?php endforeach; ?>
 
 
 <footer class="page-footer font-small blue">

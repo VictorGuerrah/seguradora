@@ -94,8 +94,7 @@ class QueryBuilder{
         
             try{
             
-            var_dump($id);
-            var_dump($sql);
+            
 
             $statement = $this->pdo->prepare($sql);
     
