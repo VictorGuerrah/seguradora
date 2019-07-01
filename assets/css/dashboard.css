@@ -7,37 +7,28 @@
     color: white;
     
 }
-
-.titulo{
-    color: black; 
-    font-family: 'Droid serif', serif; 
-    font-size: 36px; font-weight: 400; 
-    font-style: italic; 
-    line-height: 44px; 
-    margin: 0 0 12px; 
-    text-align: center; 
-    }
-
+.barra{
+    margin-bottom: 2%;
+    background: linear-gradient(to right, #5271ff, #0062E6, #33AEFF);
+  
+}
 
 @font-face{
     font-family: AbrilFatFace;
     src:"/Users/arthursantiago/Desktop/UFJF/Trainee/fontes"('AbrilFatFace.otf');
 }
 
-.barra{
-        margin-bottom: 2%;
-        background: #007bff;
-        background: linear-gradient(to right, #5271ff, #0062E6, #33AEFF);
-      
-}
 .seguradora-nome{
     text-align: left;
     color: white;
 }
+.navbar{
+    width: 100%;
+}
 
-.tabela-seguros{
-    margin-left: 20%;
-    margin-right: 20%;
+.tabela-clientes{
+    margin-left: 30%;
+    margin-right: 30%;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -56,43 +47,49 @@
     margin-left: 45px;
 }
 
-.fix{
-    width: 0%;
+.cardCliente{
+    border: solid 1px;
+    border-radius: 20px;
 }
 
+.fix{
+    width: 40%;
+}
+
+
 @media (max-width: 1150px){
-    .tabela-seguros{
+    .tabela-clientes{
         margin-left: 5%;
-        margin-right: -60%;
+        margin-right: 5%;
     }
     .navbar{
-        width: 170%;
+        width: 100%;
     }
 }
 
 @media (max-width: 500px){
-    .tabela-seguros{
-        margin-right: -175%;
+    .tabela-clientes{
+        margin-right: -25%;
     }
     .navbar{
-        width: 280%;
+        width: 130%;
     }
 }
 
 @media (max-width: 400px){
-    .tabela-seguros{
-        margin-right: -210%;
+    .tabela-clientes{
+        margin-right: -15%;
     }
     .navbar{
-        width: 320%;
+        width: 120%;
     }
 }
 
 @media (max-width: 350px){
     .tabela-seguros{
-        margin-right: -250%;
+        margin-right: -25%;
     }
     .navbar{
-        width: 360%;
+        width: 130%;
     }
 }

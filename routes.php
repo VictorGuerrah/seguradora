@@ -1,8 +1,11 @@
 <?php
 
 // Inicial
+$router->get('', 'views/login/login.php');
 $router->get('login', 'views/login/login.php');
-$router->get('', 'controllers/cargo/showController.php');
+
+//Dashboard
+$router->get('dashboard', 'views/dashboard/dashboard.php');
 
 //Cargo
 $router->get('cargos', 'controllers/cargo/showController.php');

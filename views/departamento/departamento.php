@@ -16,6 +16,10 @@
 
   <?php require 'views/partial/header.php'; ?>
 
+  <hr>
+  <h1 class="titulo">Departamentos</h1>
+  <hr>
+
   <div class="tabela-clientes">
     <table class="table table-striped">
       <thead>
@@ -73,69 +77,69 @@
         </div>
       </div>
     </div>
-</div>
-  
-
-
-  <div class="modal fade" id="edit<?= $departamento->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-     
-        <div class="modal-header">
-          <h5 class="modal-title" id="editarDepModal">Editar Departamento</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-
-          <form method="POST" action="/updateDepartamento">
-            <div class="form-group">
-              <label >Nome</label>
-              <input name='id' type='hidden' value='<?= $departamento->id ; ?>'>
-              <input name="nome" class="form-control" placeholder="<?= $departamento->nome ; ?>">
-            </div>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-            <button type="sunmit" class="btn btn-primary">Salvar</button>
-          </form>
-        </div>
-      </div>
     </div>
 
 
 
-    <div class="modal fade" id="del<?= $departamento->id; ?>" tabindex="-1" role="dialog">
+    <div class="modal fade" id="edit<?= $departamento->id; ?>" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
+
           <div class="modal-header">
-            <h5 class="modalEcluir" id="excluirModal">Excluir Departamento</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <h5 class="modal-title" id="editarDepModal">Editar Departamento</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form method='POST' action='/deleteDepartamento'>
-              <input name="id" type="hidden" value="<?= $departamento->id; ?>">
-              <br>
-              <h5 class="centralizado">Deseja Realmente excluir esse Departamento?</h5>
-              <br>
-              <hr>
+
+            <form method="POST" action="/updateDepartamento">
+              <div class="form-group">
+                <label>Nome</label>
+                <input name='id' type='hidden' value='<?= $departamento->id; ?>'>
+                <input name="nome" class="form-control" placeholder="<?= $departamento->nome; ?>">
+              </div>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-              <button type="submit" class="btn btn-danger">Excluir</button>
+              <button type="sunmit" class="btn btn-primary">Salvar</button>
             </form>
           </div>
         </div>
       </div>
-    </div>
 
 
-  <?php endforeach; ?>
 
-  <!--JS-->
+      <div class="modal fade" id="del<?= $departamento->id; ?>" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modalEcluir" id="excluirModal">Excluir Departamento</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form method='POST' action='/deleteDepartamento'>
+                <input name="id" type="hidden" value="<?= $departamento->id; ?>">
+                <br>
+                <h5 class="centralizado">Deseja Realmente excluir esse Departamento?</h5>
+                <br>
+                <hr>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-danger">Excluir</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
+
+    <?php endforeach; ?>
+
+    <!--JS-->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.js"></script>
 </body>
 
 
